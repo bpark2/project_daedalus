@@ -1,4 +1,4 @@
-package Componenets;/*
+package Components;/*
 each Componenets.cell represents a space in the labyrinth
  */
 
@@ -14,10 +14,21 @@ public class cell {
     public cell(int xCoord, int yCoord){
         x = xCoord;
         y = yCoord;
+        visited = false;
     }
+
+    public void setVisited(boolean visited){
+        this.visited = visited;
+    }
+
+    public boolean isVisited(){
+        return visited;
+    }
+
     public int getX(){
         return x;
     }
+
     public int getY(){
         return y;
     }
@@ -48,11 +59,11 @@ public class cell {
                      */
     public void setConnection(int dir, cell newConnection){
         switch (dir) {
-            case 0 -> cellNorth = newConnection;
-            case 1 -> cellEast = newConnection;
-            case 2 -> cellSouth = newConnection;
-            case 3 -> cellWest = newConnection;
-            default -> System.out.println("Something is wrong");
+            case 0: cellNorth = newConnection; break;
+            case 1: cellEast = newConnection; break;
+            case 2: cellSouth = newConnection; break;
+            case 3: cellWest = newConnection; break;
+            default: System.out.println("Something is wrong");
         }
     }
 }

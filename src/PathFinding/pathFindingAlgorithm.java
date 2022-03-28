@@ -1,13 +1,14 @@
 package PathFinding;
 
-import Componenets.cell;
-import Componenets.grid;
+import Components.cell;
+import Components.grid;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public abstract class pathFindingAlgorithm {
     ArrayList<cell> solution;
-
+    JFrame display;
     /**
      * this implements how the algorithm solves the path finding problem
      * @param laby the maze it is trying to solve
@@ -17,6 +18,10 @@ public abstract class pathFindingAlgorithm {
      * @param destY the y position of the destination
      */
     public abstract void findPath(grid laby, int x, int y, int destX, int destY);
+
+    public void setDisplay(JFrame display) {
+        this.display = display;
+    }
 
     public ArrayList<cell> getSolution() {
         return solution;

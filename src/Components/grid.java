@@ -1,4 +1,4 @@
-package Componenets;
+package Components;
 /*
 The Componenets.grid object will act as our board and contain the labyrinth
  */
