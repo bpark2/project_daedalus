@@ -37,17 +37,21 @@ public class grid {
         if(A.x == B.x){//vertical change
             if(A.y<B.y){//right
                 A.setConnection(1,B);
+                B.setConnection(3,A);
             }
             else{//left
                 A.setConnection(3,B);
+                B.setConnection(1,A);
             }
         }
         else{//horizontal
             if(A.x<B.x){//down
                 A.setConnection(2,B);
+                B.setConnection(0,A);
             }
             else{//up
                 A.setConnection(0,B);
+                B.setConnection(2,A);
             }
         }
     }
