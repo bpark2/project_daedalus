@@ -21,14 +21,31 @@ public class cell {
     public int getY(){
         return y;
     }
+
+    public cell getCellNorth() {
+        return cellNorth;
+    }
+
+    public cell getCellEast() {
+        return cellEast;
+    }
+
+    public cell getCellSouth() {
+        return cellSouth;
+    }
+
+    public cell getCellWest() {
+        return cellWest;
+    }
+
     /*
-    this method allows for a given Componenets.cell to connect to another. An int value is provided
-    to specify which type of connection is being made
-    0 - north
-    1 - east
-    2 - south
-    3 - west
-     */
+                    this method allows for a given Componenets.cell to connect to another. An int value is provided
+                    to specify which type of connection is being made
+                    0 - north
+                    1 - east
+                    2 - south
+                    3 - west
+                     */
     public void setConnection(int dir, cell newConnection){
         switch (dir) {
             case 0 -> cellNorth = newConnection;
