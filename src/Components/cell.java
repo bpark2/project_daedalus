@@ -10,13 +10,20 @@ public class cell {
     int x;
     int y;
     boolean visited;//for labyrinth traversal
-
+    boolean isPath;//for to ensure if it is the path
     public cell(int xCoord, int yCoord){
         x = xCoord;
         y = yCoord;
         visited = false;
+        isPath = false;
     }
 
+    public void setPath(boolean isPath){
+        this.isPath = isPath;
+    }
+    public boolean isPath(){
+        return isPath;
+    }
     public void setVisited(boolean visited){
         this.visited = visited;
     }

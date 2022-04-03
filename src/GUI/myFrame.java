@@ -60,7 +60,7 @@ class labDisp extends JPanel{
                 if(curCell.getCellWest()==null){
                     g.drawLine(x-diagSize,y+diagSize,x-diagSize,y-diagSize);
                 }
-                if(curCell.isVisited()){
+                if(curCell.isPath()){
                     g.setColor(Color.DARK_GRAY);
                     g.fillRect(x-diagSize,y-diagSize,diagSize*2,diagSize*2);
                     g.setColor(Color.BLACK);
