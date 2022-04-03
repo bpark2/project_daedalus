@@ -41,15 +41,11 @@ public class recursiveBacktracking extends mazeMakingAlgorithm{
         if((x-1)>=0 && !laby.get(x-1,y).isVisited()){//west not visited
             possibleNeighbours.add(laby.get(x-1,y));
         }
-        System.out.println(possibleNeighbours.size());
         if(possibleNeighbours.size()==0){//no possible neighbours
             //go back to next level and repeat process
             s.pop();
             if(!s.empty()) {
                 backTrack(laby, s);
-            } else {
-                System.out.println("we're done here");
-                //currently doesn't stop here i think it goes back up the stack
             }
         } else { // valid neighbours exist
             int decision = (int) (Math.random() * possibleNeighbours.size());
