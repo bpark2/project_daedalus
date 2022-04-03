@@ -9,7 +9,6 @@ public class recursiveBruteforce extends pathFindingAlgorithm{
     int destX;
     int destY;
     boolean isPartOfSolution(cell path, int dir){
-
         if(path == null)
             return false;
         if(path.getX()==destX&&path.getY()==destY){

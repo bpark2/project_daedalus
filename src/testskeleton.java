@@ -10,15 +10,15 @@ import java.util.ArrayList;
 
 public class testskeleton {
     public static void main(String[] args){
-        grid main = new grid(20,40);
+        grid main = new grid(3,3);
         myFrame f = new myFrame("Algorithm",main);
         mazeMakingAlgorithm m = new recursiveBacktracking();
         m.setDisplay(f);
         m.setR(420);
         m.makePath(main);
-        pathFindingAlgorithm finder = new recursiveBruteforce();
+        pathFindingAlgorithm finder = new randomWalk();
         finder.setDisplay(f);
-        finder.findPath(main,0,0,40,100);
+        finder.findPath(main,0,0,0,1);//x = 0 to width, y = 0 to height
         ArrayList<cell> t = finder.getSolution();
         f.repaint();
 //        m.setR(255);
@@ -31,6 +31,5 @@ public class testskeleton {
 //        finder.findPath(main,startX,startY,destX,destY);
 //        ArrayList<cell> t = finder.getSolution();
 //        System.out.println();
-
     }
 }
