@@ -13,8 +13,8 @@ public class recursiveBacktracking extends mazeMakingAlgorithm{
     @Override
     public void makePath(grid laby) {
         Stack<cell> s = new Stack<cell>();//stack for backtracking alg
-        int randomX = (int)(Math.random() * laby.getLaby().length);
-        int randomY = (int)(Math.random() * laby.getLaby()[0].length);
+        int randomX = (int)(r.nextDouble() * laby.getLaby().length);
+        int randomY = (int)(r.nextDouble() * laby.getLaby()[0].length);
         cell start = laby.get(randomX,randomY);
         s.push(start);
         s.peek().setVisited(true);
@@ -48,7 +48,7 @@ public class recursiveBacktracking extends mazeMakingAlgorithm{
                 backTrack(laby, s);
             }
         } else { // valid neighbours exist
-            int decision = (int) (Math.random() * possibleNeighbours.size());
+            int decision = (int) (r.nextDouble() * possibleNeighbours.size());
             cell chosenOne = possibleNeighbours.get(decision);
             laby.setConnection(s.peek(),chosenOne);
             s.push(chosenOne);
