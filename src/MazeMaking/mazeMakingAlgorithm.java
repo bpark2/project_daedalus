@@ -14,5 +14,8 @@ public abstract class mazeMakingAlgorithm {
     public void setR(int seed) {
         r = new Random(seed);
     }
+    public Random getR(){
+        return r;
+    }
     public abstract void makePath(grid laby);
 }

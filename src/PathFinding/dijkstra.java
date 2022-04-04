@@ -11,9 +11,9 @@ public class dijkstra extends pathFindingAlgorithm{
             int tempy = temp.getY();
             laby.get(tempx, tempy).setPath(true);
             temp = prev[tempx][temp.getY()];
+            display.repaint();
         }
         laby.get(x,y).setPath(true);
-        display.repaint();
     }
     cell min(grid laby, int[][] dist){
         cell returnThis = null;
@@ -45,6 +45,7 @@ public class dijkstra extends pathFindingAlgorithm{
             u.setVisited(true);
             if((u.getX()==destX && u.getY()==destY)){
                 System.out.println("found solution");
+                break;
             }
             //for each neighbour
             if(u.getCellNorth()!=null && !u.getCellNorth().isVisited()){
