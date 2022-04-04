@@ -6,53 +6,68 @@ import Components.grid;
 import java.util.ArrayList;
 
 public class randomWalk extends pathFindingAlgorithm{
-    int destX;
-    int destY;
+    int destX;//the goal x coordinate
+    int destY;//the goal y coordinate
 
     @Override
     public void findPath(grid laby, int x, int y, int destX, int destY) {
-        solution = new ArrayList<>();
-        cell start = laby.get(x,y);
+        solution = new ArrayList<>();//the solution path
+        cell start = laby.get(x,y);//the starting position
+        //updating local vars
         this.destX = destX;
         this.destY = destY;
+        //updating path with current position
         start.setPath(true);
         start.setVisited(true);
+        randomStep(laby,start,solution,destX,destY);
+    }
 
-        //while cell's coord's are not goal cords, make movement
-        //need to update x and y coordinates
-        //currently never exiting this while loop
-        while(start.getX()!=destY || start.getY()!=destX){
-            ArrayList<cell> choices = new ArrayList<>();
-            int myX = start.getX();
-            int myY = start.getY();
-            if((myY+1)<laby.getLaby()[0].length && !laby.get(myX,myY+1).isVisited()){//if north is not visited
-                choices.add(laby.get(myX,myY+1));
+    public void randomStep(grid laby, cell curCell, ArrayList<cell> path, int destX, int destY){
+        int curX = curCell.getX();
+        int curY = curCell.getY();
+        ArrayList<cell> neighbours = new ArrayList<>();
+        if(curX!=destX || curY!=destY){//if our cell is not at the goal position
+            /*
+            if north is not out of bounds and is not visited:
+                add to list of possible neighbours
+            if east is not out of bounds and is not visited:
+                add to list of possible neighbours
+            if south is not out of bounds and is not visited:
+                add to list of possible neighbours
+            if west is not out of bounds and is not visited:
+                add to list of possible neighbours
+             */
+            /*
+            note: these conditional statements do not care about our walls
+             */
+            if(curCell.getCellNorth()!=null && !curCell.getCellNorth().isVisited()){
+                neighbours.add(laby.get(curX,curY-1));
             }
-            if((myX+1)<laby.getLaby().length && !laby.get(myX+1,myY).isVisited()){//east not visited
-                choices.add(laby.get(myX+1,myY));
+            if(curCell.getCellEast()!=null && !curCell.getCellEast().isVisited()){
+                neighbours.add(laby.get(curX+1,curY));
             }
-            if((myY-1)>=0 && !laby.get(myX,myY-1).isVisited()){//south not visited
-                choices.add(laby.get(myX,myY-1));
+            if(curCell.getCellSouth()!=null && !curCell.getCellSouth().isVisited()){
+                neighbours.add(laby.get(curX,curY+1));
             }
-            if((myX-1)>=0 && !laby.get(myX-1,myY).isVisited()){//west not visited
-                choices.add(laby.get(myX-1,myY));
+            if(curCell.getCellWest()!=null && !curCell.getCellWest().isVisited()){
+                neighbours.add(laby.get(curX-1,curY));
             }
-            if(choices.size()==0){//we're at a deadend
-                //might have issue here
-                if(solution.size()>0) {
-                    solution.remove(solution.size() - 1);
-                    start = solution.get(solution.size()-1);
+            if(neighbours.size()==0){//no possible neighbours to move to
+                if(path.size()>0) {
+                    path.get(path.size() - 1).setPath(false);//removing from solution path
+                    path.remove(path.size() - 1);//removing from solution path
+                    if(path.size()>0) {
+                        randomStep(laby, path.get(path.size() - 1), path, destX, destY);//recursive call
+                    }
                 }
-            } else {
-                int choice = (int) (Math.random()*choices.size());
-                //this is a problem i believe
-                solution.add(choices.get(choice));
-                choices.get(choice).setPath(true);
-                start = choices.get(choice);
-                start.setVisited(true);
+            } else {//possible neighbours exist
+                int decision = (int)(Math.random() * neighbours.size());//picking a random neighbour
+                cell chosenOne = neighbours.get(decision);//our chosen cell to move to
+                chosenOne.setVisited(true);//update it as visited
+                chosenOne.setPath(true);//update as part of the path
+                path.add(chosenOne);//at to path list
+                randomStep(laby,chosenOne,path,destX,destY);//recursive call
             }
-            System.out.println("AHHHHH");
         }
-        System.out.println(solution.size());
     }
 }

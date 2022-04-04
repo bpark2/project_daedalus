@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class testskeleton {
     public static void main(String[] args){
-        grid main = new grid(3,3);
+        grid main = new grid(5,10);
         myFrame f = new myFrame("Algorithm",main);
         mazeMakingAlgorithm m = new recursiveBacktracking();
         m.setDisplay(f);
@@ -18,8 +18,9 @@ public class testskeleton {
         m.makePath(main);
         pathFindingAlgorithm finder = new randomWalk();
         finder.setDisplay(f);
-        finder.findPath(main,0,0,0,1);//x = 0 to width, y = 0 to height
+        finder.findPath(main,0,0,5,5);//x = 0 to width, y = 0 to height
         ArrayList<cell> t = finder.getSolution();
+        System.out.println("done");
         f.repaint();
 //        m.setR(255);
 //        m.makePath(main);
