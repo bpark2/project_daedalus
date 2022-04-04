@@ -41,24 +41,22 @@ public class randomWalk extends pathFindingAlgorithm{
             note: these conditional statements do not care about our walls
              */
             if(curCell.getCellNorth()!=null && !curCell.getCellNorth().isVisited()){
-                neighbours.add(laby.get(curX,curY-1));
+                neighbours.add(curCell.getCellNorth());//laby.get(curX,curY-1)
             }
             if(curCell.getCellEast()!=null && !curCell.getCellEast().isVisited()){
-                neighbours.add(laby.get(curX+1,curY));
+                neighbours.add(curCell.getCellEast());//laby.get(curX+1,curY)
             }
             if(curCell.getCellSouth()!=null && !curCell.getCellSouth().isVisited()){
-                neighbours.add(laby.get(curX,curY+1));
+                neighbours.add(curCell.getCellSouth());//laby.get(curX,curY+1)
             }
             if(curCell.getCellWest()!=null && !curCell.getCellWest().isVisited()){
-                neighbours.add(laby.get(curX-1,curY));
+                neighbours.add(curCell.getCellWest());//laby.get(curX-1,curY)
             }
             if(neighbours.size()==0){//no possible neighbours to move to
                 if(path.size()>0) {
                     path.get(path.size() - 1).setPath(false);//removing from solution path
                     path.remove(path.size() - 1);//removing from solution path
-                    if(path.size()>0) {
-                        randomStep(laby, path.get(path.size() - 1), path, destX, destY);//recursive call
-                    }
+                    randomStep(laby, path.get(path.size() - 1), path, destX, destY);//recursive call
                 }
             } else {//possible neighbours exist
                 int decision = (int)(Math.random() * neighbours.size());//picking a random neighbour
