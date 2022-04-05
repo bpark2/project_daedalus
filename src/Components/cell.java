@@ -9,7 +9,7 @@ public class cell {
     cell cellWest;
     int x;
     int y;
-    boolean visited;//for labyrinth traversal
+    boolean visited;//for labyrinth traversal, if the cell is visited
     boolean isPath;//for to ensure if it is the path
     public cell(int xCoord, int yCoord){
         x = xCoord;

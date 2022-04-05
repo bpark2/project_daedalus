@@ -29,7 +29,7 @@ public class grid {
     }
 
     /**
-     * connects two given cell
+     * connects two given cell both directions
      * @param A the first cell to connect
      * @param B the second cell to connect
      */

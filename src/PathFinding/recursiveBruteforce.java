@@ -40,12 +40,12 @@ public class recursiveBruteforce extends pathFindingAlgorithm{
     public void findPath(grid laby, int x, int y, int destX, int destY){
         solution = new ArrayList<>();
         cell start = laby.get(x,y);
-
+// here 0 indicates, we went north, 1 east, 2 south and 3 west
         this.destX = destX;
         this.destY = destY;
         start.setPath(true);
         start.setVisited(true);
-        if(isPartOfSolution(start.getCellNorth(),0)) {
+        if(isPartOfSolution(start.getCellNorth(),0)) {// if we can go north and didn't come from south go north.
             solution.add(start.getCellNorth());
             start.getCellNorth().setPath(true);
         }

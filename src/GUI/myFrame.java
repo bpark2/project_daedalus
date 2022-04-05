@@ -65,7 +65,6 @@ class labDisp extends JPanel{
                     g.fillRect(x-diagSize,y-diagSize,diagSize,diagSize);
                     g.setColor(Color.BLACK);
                 }
-
             }
         }
     }
