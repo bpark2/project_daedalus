@@ -5,12 +5,12 @@ import Components.cell;
 import java.util.LinkedList;
 
 public class floodFill extends pathFindingAlgorithm{
-    LinkedList<cell> list ;
+    LinkedList<cell> list ;//this contains the list of cells to be visited.
     @Override
     public void findPath(grid laby, int x, int y, int destX, int destY) {
         list = new LinkedList<>();
-        list.add(laby.get(x,y));
-        while(!list.isEmpty()){
+        list.add(laby.get(x,y));//adds the base case of origin cell
+        while(!list.isEmpty()){//till the list of needs to visit cell is not empty
             cell temp = list.remove();
             temp.setVisited(true);
             temp.setPath(true);
