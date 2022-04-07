@@ -19,6 +19,7 @@ public class randomWalk extends pathFindingAlgorithm{
         //updating path with current position
         start.setPath(true);
         start.setVisited(true);
+        solution.add(start);
         randomStep(laby,start,solution,destX,destY);
     }
 
