@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class testskeleton {
     public static void main(String[] args) {
-        grid main = new grid(1000, 1000);
+        grid main = new grid(5, 5);
         myFrame f = new myFrame("Algorithm", main);
         mazeMakingAlgorithm m = new pseudoBacktracking();
         m.setDisplay(f);
@@ -23,17 +23,17 @@ public class testskeleton {
                 main.get(i, j).setVisited(false);
             }
         }
-        pathFindingAlgorithm finder = new floodFill();
+        pathFindingAlgorithm finder = new AstarManhattan();//teh algorithm we are using
         finder.setDisplay(f);
         int goalX = (int) (m.getR().nextDouble() * main.getLaby().length);
         int goalY = (int) (m.getR().nextDouble() * main.getLaby()[0].length);
-        System.out.println("Goal Coordinates (X,Y): " + goalX + "," + goalY);
+        System.out.println("Goal Coordinates (X,Y): " + 9 + "," + 9);
         f.repaint();
-        finder.findPath(main, 0, 0, goalX, goalY);//x = 0 to width, y = 0 to height
+        finder.findPath(main, 0, 0, 4, 4);//x = 0 to width, y = 0 to height
         ArrayList<cell> t = finder.getSolution();
         f.repaint();
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             System.out.println("oh no");
         }
