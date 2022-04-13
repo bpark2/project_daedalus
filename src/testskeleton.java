@@ -14,7 +14,7 @@ public class testskeleton {
 
     public static void main(String[] args) {
         Runtime runtime = Runtime.getRuntime();
-        grid main = new grid(100, 100);
+        grid main = new grid(10, 10);
         myFrame f = new myFrame("Algorithm", main);
         mazeMakingAlgorithm m = new pseudoBacktracking();
         int deadEnds = 0;
@@ -36,7 +36,7 @@ public class testskeleton {
         int goalY = (int) (m.getR().nextDouble() * main.getLaby()[0].length);
         System.out.println("Goal Coordinates (X,Y): " + goalX + "," + goalY);
         f.repaint();
-        finder.findPath(main, 0, 0, 99, 0);//x = 0 to width, y = 0 to height
+        finder.findPath(main, 0, 0, 2, 2);//x = 0 to width, y = 0 to height
 //        System.out.println(String.format("Memory : " + (double)test.getNonHeapMemoryUsage().getUsed()));
         System.out.println("Memory " + finder.getTotalMemory());
         ArrayList<cell> t = finder.getSolution();
@@ -77,22 +77,24 @@ public class testskeleton {
         for (int i = 0; i < main.getLaby().length; i++) {
             for (int j = 0; j < main.getLaby()[i].length; j++) {
                 validNeighCount = 0;
-                if(main.get(i,j).isVisited() && i!=goalX && j!=goalY){
+                if(main.get(i,j).isVisited()){
                     visitCount++;
-                    if(!(main.get(i,j).getCellNorth()==null)){
-                        validNeighCount++;
-                    }
-                    if(!(main.get(i,j).getCellEast()==null)){
-                        validNeighCount++;
-                    }
-                    if(!(main.get(i,j).getCellSouth()==null)){
-                        validNeighCount++;
-                    }
-                    if(!(main.get(i,j).getCellWest()==null)){
-                        validNeighCount++;
-                    }
-                    if(validNeighCount==1){//only one possible way to go
-                        deadEnds++;
+                    if(i!=goalX && j!=goalY) {
+                        if (!(main.get(i, j).getCellNorth() == null)) {
+                            validNeighCount++;
+                        }
+                        if (!(main.get(i, j).getCellEast() == null)) {
+                            validNeighCount++;
+                        }
+                        if (!(main.get(i, j).getCellSouth() == null)) {
+                            validNeighCount++;
+                        }
+                        if (!(main.get(i, j).getCellWest() == null)) {
+                            validNeighCount++;
+                        }
+                        if (validNeighCount == 1) {//only one possible way to go
+                            deadEnds++;
+                        }
                     }
                 }
             }
