@@ -17,6 +17,7 @@ public class testskeleton {
         grid main = new grid(100, 100);
         myFrame f = new myFrame("Algorithm", main);
         mazeMakingAlgorithm m = new pseudoBacktracking();
+        int deadEnds = 0;
         m.setDisplay(f);
         m.setR(420);
         m.makePath(main);
@@ -33,7 +34,7 @@ public class testskeleton {
         finder.setDisplay(f);
         int goalX = (int) (m.getR().nextDouble() * main.getLaby().length);
         int goalY = (int) (m.getR().nextDouble() * main.getLaby()[0].length);
-        System.out.println("Goal Coordinates (X,Y): " + 9 + "," + 9);
+        System.out.println("Goal Coordinates (X,Y): " + goalX + "," + goalY);
         f.repaint();
         finder.findPath(main, 0, 0, 99, 0);//x = 0 to width, y = 0 to height
 //        System.out.println(String.format("Memory : " + (double)test.getNonHeapMemoryUsage().getUsed()));
@@ -60,6 +61,43 @@ public class testskeleton {
             } catch (InterruptedException e) {
                 System.out.println("no oh");
             }
+//        m.setR(255);
+//        m.makePath(main);
+//        pathFindingAlgorithm finder = new recursiveBruteforce();
+//        int startX = 0;
+//        int startY = 0;
+//        int destX = 4;
+//        int destY= 3;
+//        finder.findPath(main,startX,startY,destX,destY);
+//        ArrayList<cell> t = finder.getSolution();
+//        System.out.println();
         }
+        int visitCount = 0;
+        int validNeighCount = 0;
+        for (int i = 0; i < main.getLaby().length; i++) {
+            for (int j = 0; j < main.getLaby()[i].length; j++) {
+                validNeighCount = 0;
+                if(main.get(i,j).isVisited() && i!=goalX && j!=goalY){
+                    visitCount++;
+                    if(!(main.get(i,j).getCellNorth()==null)){
+                        validNeighCount++;
+                    }
+                    if(!(main.get(i,j).getCellEast()==null)){
+                        validNeighCount++;
+                    }
+                    if(!(main.get(i,j).getCellSouth()==null)){
+                        validNeighCount++;
+                    }
+                    if(!(main.get(i,j).getCellWest()==null)){
+                        validNeighCount++;
+                    }
+                    if(validNeighCount==1){//only one possible way to go
+                        deadEnds++;
+                    }
+                }
+            }
+        }
+        System.out.println("Deadends = "+deadEnds);
+        System.out.println("Visited Nodes = "+visitCount);
     }
 }
