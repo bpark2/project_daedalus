@@ -34,9 +34,12 @@ public class iterativeBruteForce extends pathFindingAlgorithm{
     }
     @Override
     public void findPath(grid laby, int x, int y, int destX, int destY) {
+
+        initializeMemory();
+
         cell currCell = laby.get(x,y);//this is teh currCell we are looking at
         Stack<Integer> S = new Stack<>();//this holds which position we took at each step of the solution.
-
+        addMemory();
 //        int pathTaken = -1;//0 for north taken, 1 for east taken, 2 for south taken, and 3 for west taken
         while(true) {
             currCell.setVisited(true);
@@ -81,6 +84,7 @@ public class iterativeBruteForce extends pathFindingAlgorithm{
                     currCell = currCell.getCellEast();
                     break;
             }
+            addMemory();
         }//end of while
         reconstructPath(laby,S, currCell.getX(),currCell.getY());
     }

@@ -2,11 +2,9 @@ package PathFinding;
 
 import Components.cell;
 import Components.grid;
-
 import java.util.ArrayList;
-import java.util.LinkedList;
 
-public class AstarManhattan extends pathFindingAlgorithm{
+public class Astar extends pathFindingAlgorithm{
 
     /**
      * given a labrinth with cells, and dist of each cell, returns the smallest value
@@ -14,9 +12,9 @@ public class AstarManhattan extends pathFindingAlgorithm{
      * @param dist the distance value of each node
      * @return the cell that is not visited and has lowest value
      */
-    cell min(grid laby, int[][] dist){
+    cell min(grid laby, double[][] dist){
         cell returnThis = null;
-        int minval = Integer.MAX_VALUE;
+        double minval = Double.POSITIVE_INFINITY;
         for (int i = 0; i < dist.length; i++) {
             for (int j = 0; j < dist[i].length; j++) {
                 if(minval>dist[i][j] && !laby.get(i,j).isVisited()){
@@ -28,6 +26,10 @@ public class AstarManhattan extends pathFindingAlgorithm{
         return returnThis;//this means that we are returing a cell we already visited, which then ends the loop
     }
 
+
+    boolean isManhattan(){
+        return heuristic;
+    }
     /**
      * given a list of visited cells, returns the path from the current cell
      * @param prev the list of cells visited in order
@@ -41,7 +43,6 @@ public class AstarManhattan extends pathFindingAlgorithm{
             c = prev[c.getX()][c.getY()];
             solution.add(0,c);
         }
-
     }
     /**
      * given two cells, this function calculates the manhattan distance of the two cells
@@ -52,10 +53,21 @@ public class AstarManhattan extends pathFindingAlgorithm{
     int ManhattanDistance(cell A, cell B){
         return Math.abs(A.getX() - B.getX()) + Math.abs(A.getY() - B.getY());
     }
+
+    /**
+     * given two cells, this functions calculates the euclidean distance of the two cells
+     * @param A this current cell.
+     * @param B the neighbouring cell we are testing against.
+     * @return an integer value which is the euclidean distance between current cell and the neighbour.
+     */
+    double EuclideanDistance(cell A, cell B){
+        return Math.sqrt(Math.pow(A.getX()-B.getX(),2) + Math.pow(A.getY()-B.getY(),2));
+    }
     @Override
     public void findPath(grid laby, int x, int y, int destX, int destY) {
+        initializeMemory();//used to keep track of the memory used.
         int[][] dist = new int[laby.getLaby().length][laby.getLaby()[0].length];//gets the distance values for each node
-        int[][] fscore = new int[laby.getLaby().length][laby.getLaby()[0].length];//tracks the manhattan distance
+        double[][] fscore = new double[laby.getLaby().length][laby.getLaby()[0].length];//tracks the manhattan distance
         cell[][] prev = new cell[laby.getLaby().length][laby.getLaby()[0].length];
         for (int i = 0; i < dist.length; i++) {//fills the distances with max value
             for (int j = 0; j < dist[i].length; j++) {
@@ -63,7 +75,10 @@ public class AstarManhattan extends pathFindingAlgorithm{
             }
         }
         dist[x][y] = 0;//the starting position is always 0 distance from it self.
-        fscore[x][y] = ManhattanDistance(laby.get(x,y),laby.get(destX,destY));//calculates the manhattan distance of origin to destination
+        fscore[x][y] = isManhattan()?ManhattanDistance(laby.get(x,y),laby.get(destX,destY)):EuclideanDistance(laby.get(x,y),laby.get(destX,destY));//calculates the manhattan distance of origin to destination
+
+        addMemory();//adds the amount of memory currently used
+
         while(true){//keep looping till we reach destination
             cell currCell = min(laby,fscore);
 
@@ -82,13 +97,14 @@ public class AstarManhattan extends pathFindingAlgorithm{
             if(currCell.getCellWest()!=null && !currCell.getCellWest().isVisited()) neighbours.add(currCell.getCellWest());//checks if we have a west neighbour
             for (cell neighbour :
                     neighbours) {
-                int tempScore = dist[currCell.getX()][currCell.getY()] + 1;
+                int tempScore = dist[currCell.getX()][currCell.getY()] + 1;//the distance between two cells is one
                 if(tempScore<dist[neighbour.getX()][neighbour.getY()]){
                     prev[neighbour.getX()][neighbour.getY()] = currCell;
                     dist[neighbour.getX()][neighbour.getY()] = tempScore;
-                    fscore[neighbour.getX()][neighbour.getY()] = tempScore + ManhattanDistance(neighbour,laby.get(destX,destY));
+                    fscore[neighbour.getX()][neighbour.getY()] = tempScore + (isManhattan()?ManhattanDistance(neighbour,laby.get(destX,destY)):EuclideanDistance(neighbour,laby.get(destX,destY)));
                 }//end of the if statement
             }
+            addMemory();
         }//end of while loop
     }
 }

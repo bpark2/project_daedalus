@@ -2,18 +2,23 @@ package PathFinding;
 
 import Components.grid;
 import Components.cell;
+
+import java.util.ArrayList;
+
 public class dijkstra extends pathFindingAlgorithm{
 
     void reconstructPath(grid laby, cell[][] prev, int x, int y, int destX, int destY){
+        solution = new ArrayList<>();
         cell temp = laby.get(destX,destY);
         while(temp.getX()!=x || temp.getY()!=y) {
             int tempx = temp.getX();
             int tempy = temp.getY();
-            laby.get(tempx, tempy).setPath(true);
+//            laby.get(tempx, tempy).setPath(true);
+            solution.add(0,laby.get(tempx,tempy));
             temp = prev[tempx][temp.getY()];
-            display.repaint();
         }
-        laby.get(x,y).setPath(true);
+        solution.add(0,laby.get(x,y));
+//        laby.get(x,y).setPath(true);
     }
     cell min(grid laby, int[][] dist){
         cell returnThis = null;
@@ -30,20 +35,25 @@ public class dijkstra extends pathFindingAlgorithm{
     }
     @Override
     public void findPath(grid laby, int x, int y, int destX, int destY) {
+        initializeMemory();//intializes the total memory
+
         int[][] dist = new int[laby.getLaby().length][laby.getLaby()[0].length];
+        addMemory();
         cell[][] prev = new cell[laby.getLaby().length][laby.getLaby()[0].length];
+        addMemory();
         for (int i = 0; i < dist.length; i++) {
             for (int j = 0; j < dist[0].length; j++) {
                 dist[i][j] = Integer.MAX_VALUE;
             }
         }
         dist[x][y] = 0;
+        addMemory();
         while(true){
             cell u = min(laby,dist);
-            if(u==null)
+            if(u==null)//if there is no more nodes to look for
                 break;
             u.setVisited(true);
-            if((u.getX()==destX && u.getY()==destY)){
+            if((u.getX()==destX && u.getY()==destY)){// if we found the solution
                 System.out.println("found solution");
                 break;
             }
@@ -76,6 +86,7 @@ public class dijkstra extends pathFindingAlgorithm{
                     prev[u.getCellWest().getX()][u.getCellWest().getY()] = u;
                 }
             }
+            addMemory();
         }//end of loop
         reconstructPath(laby, prev,x, y, destX,destY);
     }

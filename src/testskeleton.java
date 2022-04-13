@@ -3,16 +3,18 @@ import Components.grid;
 import GUI.myFrame;
 import MazeMaking.mazeMakingAlgorithm;
 import MazeMaking.pseudoBacktracking;
-import MazeMaking.recursiveBacktracking;
 import PathFinding.*;
-import MazeMaking.SideWinder;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryMXBean;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class testskeleton {
+
     public static void main(String[] args) {
-        grid main = new grid(5, 5);
+        Runtime runtime = Runtime.getRuntime();
+        grid main = new grid(100, 100);
         myFrame f = new myFrame("Algorithm", main);
         mazeMakingAlgorithm m = new pseudoBacktracking();
         m.setDisplay(f);
@@ -23,15 +25,22 @@ public class testskeleton {
                 main.get(i, j).setVisited(false);
             }
         }
-        pathFindingAlgorithm finder = new AstarManhattan();//teh algorithm we are using
+        long startTime = System.nanoTime();
+        pathFindingAlgorithm finder = new floodFill();//the algorithm we are using
+        finder.setHeuristic(false);
+//        pathFindingAlgorithm finder = new dijkstra();
+
         finder.setDisplay(f);
         int goalX = (int) (m.getR().nextDouble() * main.getLaby().length);
         int goalY = (int) (m.getR().nextDouble() * main.getLaby()[0].length);
         System.out.println("Goal Coordinates (X,Y): " + 9 + "," + 9);
         f.repaint();
-        finder.findPath(main, 0, 0, 4, 4);//x = 0 to width, y = 0 to height
+        finder.findPath(main, 0, 0, 99, 0);//x = 0 to width, y = 0 to height
+//        System.out.println(String.format("Memory : " + (double)test.getNonHeapMemoryUsage().getUsed()));
+        System.out.println("Memory " + finder.getTotalMemory());
         ArrayList<cell> t = finder.getSolution();
         f.repaint();
+
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
@@ -51,16 +60,6 @@ public class testskeleton {
             } catch (InterruptedException e) {
                 System.out.println("no oh");
             }
-//        m.setR(255);
-//        m.makePath(main);
-//        pathFindingAlgorithm finder = new recursiveBruteforce();
-//        int startX = 0;
-//        int startY = 0;
-//        int destX = 4;
-//        int destY= 3;
-//        finder.findPath(main,startX,startY,destX,destY);
-//        ArrayList<cell> t = finder.getSolution();
-//        System.out.println();
         }
     }
 }

@@ -21,7 +21,7 @@ public class recursiveBacktracking extends mazeMakingAlgorithm{
         backTrack(laby,s);
     }
 
-    public void backTrack(grid laby,Stack<cell> s){
+    public void backTrack(grid laby,Stack<cell> s) throws StackOverflowError{
         int x = s.peek().getX();
         int y = s.peek().getY();
         /*

@@ -13,7 +13,7 @@ public class SideWinder extends mazeMakingAlgorithm{
         ArrayList<cell> run = new ArrayList<>();
         for (int i = 0; i < laby.getLaby().length; i++) {
             run.clear();
-            display.repaint();//repaints it each time
+//            display.repaint();//repaints it each time
             for (int j = 0; j < laby.getLaby()[i].length; j++) {
                 run.add(laby.get(i,j));
                 if(r.nextDouble()>0.5 && j+1<laby.getLaby()[i].length){//carve east

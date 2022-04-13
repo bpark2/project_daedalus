@@ -11,6 +11,7 @@ public class randomWalk extends pathFindingAlgorithm{
 
     @Override
     public void findPath(grid laby, int x, int y, int destX, int destY) {
+        initializeMemory();
         solution = new ArrayList<>();//the solution path
         cell start = laby.get(x,y);//the starting position
         //updating local vars
@@ -57,6 +58,7 @@ public class randomWalk extends pathFindingAlgorithm{
                 if(path.size()>0) {
                     path.get(path.size() - 1).setPath(false);//removing from solution path
                     path.remove(path.size() - 1);//removing from solution path
+                    addMemory();
                     randomStep(laby, path.get(path.size() - 1), path, destX, destY);//recursive call
                 }
             } else {//possible neighbours exist
@@ -65,6 +67,7 @@ public class randomWalk extends pathFindingAlgorithm{
                 chosenOne.setVisited(true);//update it as visited
                 chosenOne.setPath(true);//update as part of the path
                 path.add(chosenOne);//at to path list
+                addMemory();
                 randomStep(laby,chosenOne,path,destX,destY);//recursive call
             }
         }

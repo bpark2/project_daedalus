@@ -38,10 +38,16 @@ public class floodFill extends pathFindingAlgorithm{
     LinkedList<cell> list ;//this contains the list of cells to be visited.
     @Override
     public void findPath(grid laby, int x, int y, int destX, int destY) {
+
+        initializeMemory();
+
         list = new LinkedList<>();//contains the list to be visted.
         Stack<cell> takencell = new Stack<>();//this represents the cells that were taken already.
         list.add(laby.get(x,y));//adds the base case of origin cell
         cell temp = list.peek();
+
+        addMemory();
+
         while(!list.isEmpty()){//till the list of needs to visit cell is not empty
             temp = list.remove();
             takencell.push(temp);
@@ -59,6 +65,8 @@ public class floodFill extends pathFindingAlgorithm{
                 list.add(temp.getCellSouth());
             if(temp.getCellWest()!=null && !temp.getCellWest().isVisited())
                 list.add(temp.getCellWest());
+
+            addMemory();
         }
         pathReconstruct(takencell, temp);
     }

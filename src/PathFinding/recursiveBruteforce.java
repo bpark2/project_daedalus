@@ -9,6 +9,7 @@ public class recursiveBruteforce extends pathFindingAlgorithm{
     int destX;
     int destY;
     boolean isPartOfSolution(cell path, int dir){
+        addMemory();
         if(path == null)
             return false;
         if(path.getX()==destX&&path.getY()==destY){
@@ -16,28 +17,29 @@ public class recursiveBruteforce extends pathFindingAlgorithm{
             return true;
         }
         if(dir!=2&&isPartOfSolution(path.getCellNorth(),0)) {//moving north
-            solution.add(path.getCellNorth());
+            solution.add(0,path.getCellNorth());
             path.getCellNorth().setPath(true);
             return true;
         }
         else if(dir!=3&&isPartOfSolution(path.getCellEast(),1)) {//moving east
-            solution.add(path.getCellEast());
+            solution.add(0,path.getCellEast());
             path.getCellEast().setPath(true);
             return true;
         }
         else if(dir!=0&&isPartOfSolution(path.getCellSouth(),2)) {//moving south
-            solution.add(path.getCellSouth());
+            solution.add(0,path.getCellSouth());
             path.getCellSouth().setPath(true);
             return true;
         }
         else if(dir!=1&&isPartOfSolution(path.getCellWest(),3)) {//moving west
-            solution.add(path.getCellWest());
+            solution.add(0,path.getCellWest());
             path.getCellWest().setPath(true);
             return true;
         }
         return false;
     }
     public void findPath(grid laby, int x, int y, int destX, int destY){
+        initializeMemory();
         solution = new ArrayList<>();
         cell start = laby.get(x,y);
 // here 0 indicates, we went north, 1 east, 2 south and 3 west
@@ -45,24 +47,25 @@ public class recursiveBruteforce extends pathFindingAlgorithm{
         this.destY = destY;
         start.setPath(true);
         start.setVisited(true);
+        solution.add(start);
+        addMemory();
         if(isPartOfSolution(start.getCellNorth(),0)) {// if we can go north and didn't come from south go north.
-            solution.add(start.getCellNorth());
+            solution.add(0,start.getCellNorth());
             start.getCellNorth().setPath(true);
         }
         else if(isPartOfSolution(start.getCellEast(),1)) {
-            solution.add(start.getCellEast());
+            solution.add(0,start.getCellEast());
             start.getCellEast().setPath(true);
         }
         else if(isPartOfSolution(start.getCellSouth(),2)) {
-            solution.add(start.getCellSouth());
+            solution.add(0,start.getCellSouth());
             start.getCellSouth().setPath(true);
         }
         else if(isPartOfSolution(start.getCellWest(),3)) {
-            solution.add(start.getCellWest());
+            solution.add(0,start.getCellWest());
             start.getCellWest().setPath(true);
         }
-
-        solution.add(start);
+    addMemory();
     }
 
 }

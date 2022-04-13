@@ -11,6 +11,8 @@ public class iterativeRandomWalk extends pathFindingAlgorithm{
 
     @Override
     public void findPath(grid laby, int x, int y, int destX, int destY) {
+        initializeMemory();
+
         solution = new ArrayList<>();//the solution path
         cell curCell = laby.get(x,y);//the starting position
         //updating local vars
@@ -20,6 +22,7 @@ public class iterativeRandomWalk extends pathFindingAlgorithm{
         curCell.setPath(true);
         curCell.setVisited(true);
         solution.add(curCell);
+        addMemory();
         while(!(curCell.getX()==destX && curCell.getY()==destY)){
             ArrayList<cell> neighbours = new ArrayList<>();
             neighbours = getNeighbours(curCell,neighbours);
@@ -34,6 +37,7 @@ public class iterativeRandomWalk extends pathFindingAlgorithm{
                             break;
                         }
                     }
+                    addMemory();
                 }
             } else {
                 int decision = (int)(Math.random()*neighbours.size());
@@ -43,6 +47,7 @@ public class iterativeRandomWalk extends pathFindingAlgorithm{
                 solution.add(chosenOne);
                 curCell = chosenOne;
             }
+            addMemory();
         }
         System.out.println("we got to "+curCell.getX()+","+curCell.getY());
     }

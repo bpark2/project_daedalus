@@ -14,12 +14,13 @@ public class grid {
         return laby;
     }
 
-    /*
-        initializes a labyrinth filled with cells that are unconnected
-         */
+
     public cell get(int i,int j){
         return laby[i][j];
     }
+    /*
+       initializes a labyrinth filled with cells that are unconnected
+        */
     public void init(){
         for (int i = 0; i < laby.length; i++) {
             for (int j = 0; j < laby[i].length; j++) {
@@ -59,7 +60,12 @@ public class grid {
     /**
      * will print the given grid neatly
      */
-    public void prettyprint(){
-
+    public void reset(){
+        for (int i = 0; i < laby.length; i++) {
+            for (int j = 0; j < laby[i].length; j++) {
+                laby[i][j].visited = false;
+                laby[i][j].isPath = false;
+            }
+        }
     }
 }
