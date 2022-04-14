@@ -58,8 +58,64 @@ public class grid {
     }
 
     /**
-     * will print the given grid neatly
+     * counts the number of cells visited
+     * @param x the origin x
+     * @param y the origin y
+     * @param destX the destination x
+     * @param destY the destination y
+     * @return the number of cells visited
      */
+    public int countVisted(int x, int y, int destX, int destY){
+        int visited = 0;
+        for (int i = 0; i < laby.length; i++) {
+            for (int j = 0; j < laby[i].length; j++) {
+                if((i!=x && j!=y) && (i!=destX && j!=destY)){
+                    if(laby[i][j].visited)
+                        visited++;
+                }
+            }
+        }
+        return visited;
+    }
+
+
+    /**
+     * will return the total number of dead ends in the grid we searched
+     * @param x the origin x
+     * @param y the origin y
+     * @param destX the destination x
+     * @param destY the destination y
+     * @return the total number of deadends
+     */
+    public int countDeadEnds(int x, int y, int destX, int destY){
+
+        int deadEnds = 0;
+        for (int i = 0; i < laby.length; i++) {
+            for (int j = 0; j < laby[i].length; j++) {
+                int validNeighCount = 0;
+                if ((i!=destX && j!=destY)&&(i!=x && j!=y)){
+                    if(laby[i][j].isVisited()) {
+                        if (!(laby[i][j].getCellNorth() == null)) {
+                            validNeighCount++;
+                        }
+                        if (!(laby[i][j].getCellEast() == null)) {
+                            validNeighCount++;
+                        }
+                        if (!(laby[i][j].getCellSouth() == null)) {
+                            validNeighCount++;
+                        }
+                        if (!(laby[i][j].getCellWest() == null)) {
+                            validNeighCount++;
+                        }
+                        if (validNeighCount == 1) {//only one possible way to go
+                            deadEnds++;
+                        }
+                    }
+                }
+            }
+        }
+        return deadEnds;
+    }
     public void reset(){
         for (int i = 0; i < laby.length; i++) {
             for (int j = 0; j < laby[i].length; j++) {

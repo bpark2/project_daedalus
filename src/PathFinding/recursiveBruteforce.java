@@ -18,22 +18,22 @@ public class recursiveBruteforce extends pathFindingAlgorithm{
         }
         if(dir!=2&&isPartOfSolution(path.getCellNorth(),0)) {//moving north
             solution.add(0,path.getCellNorth());
-            path.getCellNorth().setPath(true);
+            path.getCellNorth().setVisited(true);
             return true;
         }
         else if(dir!=3&&isPartOfSolution(path.getCellEast(),1)) {//moving east
             solution.add(0,path.getCellEast());
-            path.getCellEast().setPath(true);
+            path.getCellEast().setVisited(true);
             return true;
         }
         else if(dir!=0&&isPartOfSolution(path.getCellSouth(),2)) {//moving south
             solution.add(0,path.getCellSouth());
-            path.getCellSouth().setPath(true);
+            path.getCellSouth().setVisited(true);
             return true;
         }
         else if(dir!=1&&isPartOfSolution(path.getCellWest(),3)) {//moving west
             solution.add(0,path.getCellWest());
-            path.getCellWest().setPath(true);
+            path.getCellWest().setVisited(true);
             return true;
         }
         return false;
@@ -51,19 +51,19 @@ public class recursiveBruteforce extends pathFindingAlgorithm{
         addMemory();
         if(isPartOfSolution(start.getCellNorth(),0)) {// if we can go north and didn't come from south go north.
             solution.add(0,start.getCellNorth());
-            start.getCellNorth().setPath(true);
+            start.getCellNorth().setVisited(true);
         }
         else if(isPartOfSolution(start.getCellEast(),1)) {
             solution.add(0,start.getCellEast());
-            start.getCellEast().setPath(true);
+            start.getCellEast().setVisited(true);
         }
         else if(isPartOfSolution(start.getCellSouth(),2)) {
             solution.add(0,start.getCellSouth());
-            start.getCellSouth().setPath(true);
+            start.getCellSouth().setVisited(true);
         }
         else if(isPartOfSolution(start.getCellWest(),3)) {
             solution.add(0,start.getCellWest());
-            start.getCellWest().setPath(true);
+            start.getCellWest().setVisited(true);
         }
     addMemory();
     }

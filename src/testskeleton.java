@@ -27,7 +27,7 @@ public class testskeleton {
             }
         }
         long startTime = System.nanoTime();
-        pathFindingAlgorithm finder = new floodFill();//the algorithm we are using
+        pathFindingAlgorithm finder = new recursiveBruteforce();//the algorithm we are using
         finder.setHeuristic(false);
 //        pathFindingAlgorithm finder = new dijkstra();
 

@@ -29,12 +29,12 @@ public abstract class pathFindingAlgorithm {
     public void initializeMemory(){
         memory = ManagementFactory.getMemoryMXBean();
 
-        startMemory = (memory.getNonHeapMemoryUsage().getUsed() + memory.getHeapMemoryUsage().getUsed())/1000000.0;
+        startMemory = ( memory.getHeapMemoryUsage().getUsed())/1000000.0;
         totalMemory = startMemory;
     }
     public void addMemory(){
 //        totalMemory = totalMemory + ((runtime.totalMemory()-runtime.freeMemory())-startMemory);
-        totalMemory = totalMemory + ((((memory.getNonHeapMemoryUsage().getUsed() + memory.getHeapMemoryUsage().getUsed()))/1000000.0) - startMemory);
+        totalMemory = totalMemory + ((((memory.getHeapMemoryUsage().getUsed()))/1000000.0) - startMemory);
     }
     public double getTotalMemory(){
         return totalMemory;
