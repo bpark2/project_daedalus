@@ -3,6 +3,8 @@ package Components;
 The Componenets.grid object will act as our board and contain the labyrinth
  */
 
+import java.math.BigInteger;
+
 public class grid {
     cell[][] laby;//our labyrinth
     public grid(int height, int width){
@@ -69,7 +71,7 @@ public class grid {
         int visited = 0;
         for (int i = 0; i < laby.length; i++) {
             for (int j = 0; j < laby[i].length; j++) {
-                if((i!=x && j!=y) && (i!=destX && j!=destY)){
+                if((i!=x || j!=y) && (i!=destX || j!=destY)){
                     if(laby[i][j].visited)
                         visited++;
                 }
@@ -89,11 +91,11 @@ public class grid {
      */
     public int countDeadEnds(int x, int y, int destX, int destY){
 
-        int deadEnds = 0;
+        int  deadEnds = 0;
         for (int i = 0; i < laby.length; i++) {
             for (int j = 0; j < laby[i].length; j++) {
                 int validNeighCount = 0;
-                if ((i!=destX && j!=destY)&&(i!=x && j!=y)){
+                if ((i!=destX || j!=destY)&&(i!=x || j!=y)){
                     if(laby[i][j].isVisited()) {
                         if (!(laby[i][j].getCellNorth() == null)) {
                             validNeighCount++;

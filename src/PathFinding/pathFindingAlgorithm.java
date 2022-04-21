@@ -34,6 +34,7 @@ public abstract class pathFindingAlgorithm {
     }
     public void addMemory(){
 //        totalMemory = totalMemory + ((runtime.totalMemory()-runtime.freeMemory())-startMemory);
+        Runtime.getRuntime().gc();
         totalMemory = totalMemory + ((((memory.getHeapMemoryUsage().getUsed()))/1000000.0) - startMemory);
     }
     public double getTotalMemory(){

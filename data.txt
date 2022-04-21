@@ -1,0 +1,936 @@
+Maze Time : 26
+Astar Manhattan s:0 size:0 spot:0
+found solution
+Time : 3027920
+Memory : 887813.2750786911
+Visted : 99998
+deadends : 0
+
+Astar Manhattan s:0 size:0 spot:1
+found solution
+Time : 768729
+Memory : 420012.7181917898
+Visted : 49998
+deadends : 0
+
+Astar Euclidean s:0 size:0 spot:0
+found solution
+Time : 1546754
+Memory : 835990.5593269344
+Visted : 99998
+deadends : 0
+
+Astar Euclidean s:0 size:0 spot:1
+found solution
+Time : 789974
+Memory : 420012.99870389013
+Visted : 49998
+deadends : 0
+
+Dijkstra s:0 size:0 spot:0
+found solution
+Time : 2600022
+Memory : 559556.7425852567
+Visted : 99998
+deadends : 0
+
+Dijkstra s:0 size:0 spot:1
+found solution
+Time : 1468903
+Memory : 560021.3908309959
+Visted : 99996
+deadends : 0
+
+Floodfill s:0 size:0 spot:0
+found path
+Time : 1583884
+Memory : 29852.839559982065
+Visted : 99998
+deadends : 0
+
+Floodfill s:0 size:0 spot:1
+found path
+Time : 1538751
+Memory : 29771.894999958527
+Visted : 99996
+deadends : 0
+
+iterative Brute Force  s:0 size:0 spot:0
+Time : 414
+Memory : 8.192856
+Visted : 99998
+deadends : 0
+
+iterative Brute Force  s:0 size:0 spot:1
+Time : 116
+Memory : 8.19344
+Visted : 49998
+deadends : 0
+
+Iterative random walk s:0 size:0 spot:0
+we got to 0,0
+Time : 1564912
+Memory : 24558.785608021484
+Visted : 99998
+deadends : 0
+
+Iterative random walk s:0 size:0 spot:1
+we got to 1,0
+Time : 2220927
+Memory : 34622.57537599397
+Visted : 99997
+deadends : 1
+
+Maze Time : 7
+Astar Manhattan s:0 size:1 spot:2
+found solution
+Time : 988685
+Memory : 159577.56682415164
+Visted : 99998
+deadends : 0
+
+Astar Manhattan s:0 size:1 spot:3
+found solution
+Time : 492255
+Memory : 80014.88509599444
+Visted : 49998
+deadends : 0
+
+Astar Euclidean s:0 size:1 spot:2
+found solution
+Time : 965720
+Memory : 159586.87080801092
+Visted : 99998
+deadends : 0
+
+Astar Euclidean s:0 size:1 spot:3
+found solution
+Time : 479426
+Memory : 80014.19035199628
+Visted : 49998
+deadends : 0
+
+Dijkstra s:0 size:1 spot:2
+found solution
+Time : 984024
+Memory : 80019.79056813814
+Visted : 99998
+deadends : 0
+
+Dijkstra s:0 size:1 spot:3
+found solution
+Time : 985882
+Memory : 80018.99044013814
+Visted : 99997
+deadends : 0
+
+Floodfill s:0 size:1 spot:2
+found path
+Time : 952838
+Memory : 29764.94103203441
+Visted : 99998
+deadends : 0
+
+Floodfill s:0 size:1 spot:3
+found path
+Time : 958168
+Memory : 29766.029935967268
+Visted : 99996
+deadends : 0
+
+iterative Brute Force  s:0 size:1 spot:2
+Time : 426
+Memory : 5.790488
+Visted : 99998
+deadends : 0
+
+iterative Brute Force  s:0 size:1 spot:3
+Time : 473700
+Memory : 16394.590488003876
+Visted : 99998
+deadends : 1
+
+Iterative random walk s:0 size:1 spot:2
+we got to 0,0
+Time : 1022580
+Memory : 24480.32308799211
+Visted : 99998
+deadends : 0
+
+Iterative random walk s:0 size:1 spot:3
+we got to 0,99999
+Time : 514435
+Memory : 6141.3222080006235
+Visted : 49998
+deadends : 0
+
+Maze Time : 1
+Astar Manhattan s:0 size:2 spot:4
+found solution
+Time : 61984
+Memory : 8403.030327999164
+Visted : 9998
+deadends : 0
+
+Astar Manhattan s:0 size:2 spot:5
+found solution
+Time : 31849
+Memory : 4203.390423999647
+Visted : 4999
+deadends : 0
+
+Astar Euclidean s:0 size:2 spot:4
+found solution
+Time : 61841
+Memory : 8403.030327999164
+Visted : 9998
+deadends : 0
+
+Astar Euclidean s:0 size:2 spot:5
+found solution
+Time : 31292
+Memory : 4203.390423999647
+Visted : 4999
+deadends : 0
+
+Dijkstra s:0 size:2 spot:4
+found solution
+Time : 59134
+Memory : 5603.71047200119
+Visted : 9998
+deadends : 0
+
+Dijkstra s:0 size:2 spot:5
+found solution
+Time : 58144
+Memory : 5603.71047200119
+Visted : 9998
+deadends : 1
+
+Floodfill s:0 size:2 spot:4
+found path
+Time : 51522
+Memory : 273.97940800003755
+Visted : 9998
+deadends : 0
+
+Floodfill s:0 size:2 spot:5
+found path
+Time : 50404
+Memory : 273.5794239999765
+Visted : 9998
+deadends : 1
+
+iterative Brute Force  s:0 size:2 spot:4
+Time : 9
+Memory : 2.070528
+Visted : 9998
+deadends : 0
+
+iterative Brute Force  s:0 size:2 spot:5
+Time : 7
+Memory : 2.070528
+Visted : 4999
+deadends : 0
+
+Iterative random walk s:0 size:2 spot:4
+we got to 0,0
+Time : 48830
+Memory : 249.26818399999902
+Visted : 9998
+deadends : 0
+
+Iterative random walk s:0 size:2 spot:5
+we got to 0,0
+Time : 73390
+Memory : 315.9488160000078
+Visted : 9998
+deadends : 1
+
+Maze Time : 0
+Astar Manhattan s:0 size:3 spot:6
+found solution
+Time : 43010
+Memory : 1603.5105520003992
+Visted : 9998
+deadends : 0
+
+Astar Manhattan s:0 size:3 spot:7
+found solution
+Time : 23039
+Memory : 802.830719999994
+Visted : 4999
+deadends : 0
+
+Astar Euclidean s:0 size:3 spot:6
+found solution
+Time : 43208
+Memory : 1603.5105520003992
+Visted : 9998
+deadends : 0
+
+Astar Euclidean s:0 size:3 spot:7
+found solution
+Time : 22912
+Memory : 802.830719999994
+Visted : 4999
+deadends : 0
+
+Dijkstra s:0 size:3 spot:6
+found solution
+Time : 46039
+Memory : 803.2307679998121
+Visted : 9998
+deadends : 0
+
+Dijkstra s:0 size:3 spot:7
+found solution
+Time : 45692
+Memory : 803.2307679998121
+Visted : 9998
+deadends : 1
+
+Floodfill s:0 size:3 spot:6
+found path
+Time : 47555
+Memory : 273.09963199999135
+Visted : 9998
+deadends : 0
+
+Floodfill s:0 size:3 spot:7
+found path
+Time : 44966
+Memory : 273.33955999997653
+Visted : 9998
+deadends : 1
+
+iterative Brute Force  s:0 size:3 spot:6
+Time : 9
+Memory : 1.830688
+Visted : 9998
+deadends : 0
+
+iterative Brute Force  s:0 size:3 spot:7
+Time : 6
+Memory : 1.830688
+Visted : 4999
+deadends : 0
+
+Iterative random walk s:0 size:3 spot:6
+we got to 0,0
+Time : 42553
+Memory : 249.02834400000245
+Visted : 9998
+deadends : 0
+
+Iterative random walk s:0 size:3 spot:7
+we got to 0,0
+Time : 21937
+Memory : 64.83918400000015
+Visted : 4999
+deadends : 0
+
+Maze Time : 0
+Astar Manhattan s:0 size:4 spot:8
+found solution
+Time : 2233
+Memory : 10.833576000000022
+Visted : 572
+deadends : 154
+
+Astar Manhattan s:0 size:4 spot:9
+found solution
+Time : 3182
+Memory : 14.69970400000036
+Visted : 812
+deadends : 216
+
+Astar Euclidean s:0 size:4 spot:8
+found solution
+Time : 2500
+Memory : 12.300160000000284
+Visted : 665
+deadends : 176
+
+Astar Euclidean s:0 size:4 spot:9
+found solution
+Time : 3572
+Memory : 15.445288000000387
+Visted : 858
+deadends : 233
+
+Dijkstra s:0 size:4 spot:8
+found solution
+Time : 3041
+Memory : 8.346192000000261
+Visted : 812
+deadends : 217
+
+Dijkstra s:0 size:4 spot:9
+found solution
+Time : 3564
+Memory : 9.050032000000302
+Visted : 895
+deadends : 249
+
+Floodfill s:0 size:4 spot:8
+found path
+Time : 3127
+Memory : 3.7906720000000007
+Visted : 810
+deadends : 216
+
+Floodfill s:0 size:4 spot:9
+found path
+Time : 3348
+Memory : 4.260032000000008
+Visted : 895
+deadends : 249
+
+iterative Brute Force  s:0 size:4 spot:8
+Time : 1422
+Memory : 1.5613279999999936
+Visted : 402
+deadends : 102
+
+iterative Brute Force  s:0 size:4 spot:9
+Time : 2754
+Memory : 1.7118639999999798
+Visted : 766
+deadends : 207
+
+Iterative random walk s:0 size:4 spot:8
+we got to 1,5
+Time : 5902
+Memory : 2.0716480000000095
+Visted : 768
+deadends : 204
+
+Iterative random walk s:0 size:4 spot:9
+we got to 0,29
+Time : 1612
+Memory : 1.5581200000000033
+Visted : 244
+deadends : 57
+
+Recursive random walk s:0 size:4 spot:8
+Time : 3707
+Memory : 22.6963520000001
+Visted : 483
+deadends : 125
+
+Recursive random walk s:0 size:4 spot:9
+Time : 3692
+Memory : 1.7589439999999097
+Visted : 524
+deadends : 132
+
+Recursive brute force s:0 size:4 spot:8
+Time : 3478
+Memory : 1.9558079999999278
+Visted : 63
+deadends : 0
+
+Recursive brute force s:0 size:4 spot:9
+Time : 8462
+Memory : 1.732408000000291
+Visted : 76
+deadends : 0
+
+Maze Time : 0
+Astar Manhattan s:0 size:5 spot:10
+found solution
+Time : 28751
+Memory : 1013.2490560000947
+Visted : 6087
+deadends : 1641
+
+Astar Manhattan s:0 size:5 spot:11
+found solution
+Time : 22239
+Memory : 773.0758640000446
+Visted : 4641
+deadends : 1253
+
+Astar Euclidean s:0 size:5 spot:10
+found solution
+Time : 36837
+Memory : 1267.875903999991
+Visted : 7620
+deadends : 2083
+
+Astar Euclidean s:0 size:5 spot:11
+found solution
+Time : 24265
+Memory : 844.331160000059
+Visted : 5070
+deadends : 1376
+
+Dijkstra s:0 size:5 spot:10
+found solution
+Time : 45226
+Memory : 808.3800559998148
+Visted : 9589
+deadends : 2627
+
+Dijkstra s:0 size:5 spot:11
+found solution
+Time : 32314
+Memory : 569.9291759998949
+Visted : 6753
+deadends : 1845
+
+Floodfill s:0 size:5 spot:10
+found path
+Time : 47385
+Memory : 267.8842480000013
+Visted : 9618
+deadends : 2637
+
+Floodfill s:0 size:5 spot:11
+found path
+Time : 32516
+Memory : 147.12387999999999
+Visted : 6747
+deadends : 1844
+
+iterative Brute Force  s:0 size:5 spot:10
+Time : 881
+Memory : 1.9986399999999809
+Visted : 420
+deadends : 62
+
+iterative Brute Force  s:0 size:5 spot:11
+Time : 22049
+Memory : 7.808488000001367
+Visted : 4708
+deadends : 1259
+
+Iterative random walk s:0 size:5 spot:10
+we got to 0,0
+Time : 65395
+Memory : 17.763480000000854
+Visted : 6670
+deadends : 1812
+
+Iterative random walk s:0 size:5 spot:11
+we got to 50,25
+Time : 33226
+Memory : 11.819487999998282
+Visted : 3646
+deadends : 981
+
+Maze Time : 8
+Astar Manhattan s:0 size:6 spot:12
+found solution
+Time : 3027585
+Memory : 810118.1279722976
+Visted : 201012
+deadends : 55755
+
+Astar Manhattan s:0 size:6 spot:13
+found solution
+Time : 1608433
+Memory : 445412.67884880805
+Visted : 110646
+deadends : 30653
+
+Astar Euclidean s:0 size:6 spot:12
+found solution
+Time : 3306398
+Memory : 906239.9398109625
+Visted : 224863
+deadends : 62318
+
+Astar Euclidean s:0 size:6 spot:13
+found solution
+Time : 2083160
+Memory : 575840.5794475516
+Visted : 142880
+deadends : 39653
+
+Dijkstra s:0 size:6 spot:12
+found solution
+Time : 3633317
+Memory : 503075.95531778666
+Visted : 249028
+deadends : 69150
+
+Dijkstra s:0 size:6 spot:13
+found solution
+Time : 3118777
+Memory : 431197.4687582314
+Visted : 213446
+deadends : 59251
+
+Floodfill s:0 size:6 spot:12
+found path
+Time : 3515926
+Memory : 251762.80308000385
+Visted : 249081
+deadends : 69166
+
+Floodfill s:0 size:6 spot:13
+found path
+Time : 3009376
+Memory : 177111.36604800413
+Visted : 213600
+deadends : 59296
+
+iterative Brute Force  s:0 size:6 spot:12
+Time : 77565
+Memory : 33.64534400000382
+Visted : 5423
+deadends : 1228
+
+iterative Brute Force  s:0 size:6 spot:13
+Time : 989492
+Memory : 383.87351999997145
+Visted : 53583
+deadends : 14675
+
+Iterative random walk s:0 size:6 spot:12
+we got to 0,0
+Time : 2703790
+Memory : 1039.6585360020629
+Visted : 98823
+deadends : 27296
+
+Iterative random walk s:0 size:6 spot:13
+we got to 20,50
+Time : 1398388
+Memory : 659.1165039998307
+Visted : 51459
+deadends : 14186
+
+Maze Time : 10
+Astar Manhattan s:0 size:7 spot:14
+found solution
+Time : 5016176
+Memory : 1350258.2793889556
+Visted : 279546
+deadends : 77450
+
+Astar Manhattan s:0 size:7 spot:15
+found solution
+Time : 110818
+Memory : 31116.106039997845
+Visted : 6437
+deadends : 1702
+
+Astar Euclidean s:0 size:7 spot:14
+found solution
+Time : 5111678
+Memory : 1401655.331006094
+Visted : 290187
+deadends : 80397
+
+Astar Euclidean s:0 size:7 spot:15
+found solution
+Time : 166741
+Memory : 47310.902887997916
+Visted : 9790
+deadends : 2669
+
+Dijkstra s:0 size:7 spot:14
+found solution
+Time : 5249352
+Memory : 725635.6595577507
+Visted : 299830
+deadends : 83197
+
+Dijkstra s:0 size:7 spot:15
+found solution
+Time : 584659
+Memory : 82869.67180001893
+Visted : 34233
+deadends : 9411
+
+Floodfill s:0 size:7 spot:14
+found path
+Time : 5047083
+Memory : 358753.87761601777
+Visted : 299845
+deadends : 83202
+
+Floodfill s:0 size:7 spot:15
+found path
+Time : 560392
+Memory : 3452.978935999995
+Visted : 34214
+deadends : 9404
+
+iterative Brute Force  s:0 size:7 spot:14
+Time : 190558
+Memory : 60.95991200002247
+Visted : 9757
+deadends : 2427
+
+iterative Brute Force  s:0 size:7 spot:15
+Time : 413003
+Memory : 95.91069600005859
+Visted : 18460
+deadends : 5020
+
+Iterative random walk s:0 size:7 spot:14
+we got to 0,0
+Time : 4556462
+Memory : 1741.3721920008218
+Visted : 140790
+deadends : 38843
+
+Iterative random walk s:0 size:7 spot:15
+we got to 499,20
+Time : 7097960
+Memory : 3159.4577040182753
+Visted : 218432
+deadends : 60603
+
+Maze Time : 2
+Astar Manhattan s:0 size:8 spot:16
+found solution
+Time : 564566
+Memory : 65793.25548799943
+Visted : 58420
+deadends : 16104
+
+Astar Manhattan s:0 size:8 spot:17
+found solution
+Time : 16900
+Memory : 2017.9346239999518
+Visted : 1786
+deadends : 276
+
+Astar Euclidean s:0 size:8 spot:16
+found solution
+Time : 618433
+Memory : 72187.22857604052
+Visted : 64098
+deadends : 17667
+
+Astar Euclidean s:0 size:8 spot:17
+found solution
+Time : 18434
+Memory : 2203.7404639999454
+Visted : 1951
+deadends : 329
+
+Dijkstra s:0 size:8 spot:16
+found solution
+Time : 675371
+Memory : 39454.25591996392
+Visted : 69933
+deadends : 19453
+
+Dijkstra s:0 size:8 spot:17
+found solution
+Time : 581108
+Memory : 34014.832479998004
+Visted : 60290
+deadends : 16740
+
+Floodfill s:0 size:8 spot:16
+found path
+Time : 667759
+Memory : 14137.653624000268
+Visted : 69940
+deadends : 19455
+
+Floodfill s:0 size:8 spot:17
+found path
+Time : 572957
+Memory : 10953.272632000368
+Visted : 60290
+deadends : 16740
+
+iterative Brute Force  s:0 size:8 spot:16
+Time : 18168
+Memory : 14.729768000000924
+Visted : 2829
+deadends : 578
+
+iterative Brute Force  s:0 size:8 spot:17
+Time : 9186
+Memory : 5.306384000000161
+Visted : 1870
+deadends : 306
+
+Iterative random walk s:0 size:8 spot:16
+we got to 0,0
+Time : 600378
+Memory : 196.76723999997043
+Visted : 32553
+deadends : 8988
+
+Iterative random walk s:0 size:8 spot:17
+we got to 99,0
+Time : 758976
+Memory : 312.82480800029316
+Visted : 41578
+deadends : 11467
+
+Maze Time : 20
+Astar Manhattan s:0 size:9 spot:18
+found solution
+Time : 9986895
+Memory : 2772921.16926026
+Visted : 382251
+deadends : 106209
+
+Astar Manhattan s:0 size:9 spot:19
+found solution
+Time : 9558964
+Memory : 2563901.647116558
+Visted : 353437
+deadends : 98195
+
+Astar Euclidean s:0 size:9 spot:18
+found solution
+Time : 10728223
+Memory : 3010558.1001239214
+Visted : 415010
+deadends : 115266
+
+Astar Euclidean s:0 size:9 spot:19
+found solution
+Time : 10045238
+Memory : 2843844.465852159
+Visted : 392028
+deadends : 108860
+
+Dijkstra s:0 size:9 spot:18
+found solution
+Time : 12197738
+Memory : 1626274.3533702777
+Visted : 447251
+deadends : 124298
+
+Dijkstra s:0 size:9 spot:19
+found solution
+Time : 11688113
+Memory : 1604334.2466497715
+Visted : 441217
+deadends : 122574
+
+Floodfill s:0 size:9 spot:18
+found path
+Time : 11480990
+Memory : 919661.7508001294
+Visted : 447302
+deadends : 124311
+
+Floodfill s:0 size:9 spot:19
+found path
+Time : 11480039
+Memory : 894592.6290479632
+Visted : 441309
+deadends : 122606
+
+iterative Brute Force  s:0 size:9 spot:18
+Time : 453808
+Memory : 116.59066400000191
+Visted : 15084
+deadends : 3799
+
+iterative Brute Force  s:0 size:9 spot:19
+Time : 1705167
+Memory : 454.08211999985343
+Visted : 50963
+deadends : 13766
+
+Iterative random walk s:0 size:9 spot:18
+we got to 0,0
+Time : 10744840
+Memory : 3807.080831982369
+Visted : 206092
+deadends : 57183
+
+Iterative random walk s:0 size:9 spot:19
+we got to 20,40
+Time : 5898235
+Memory : 1672.2395279995903
+Visted : 119386
+deadends : 32889
+
+Maze Time : 15
+Astar Manhattan s:0 size:10 spot:20
+found solution
+Time : 8815483
+Memory : 2392528.4867769442
+Visted : 370350
+deadends : 103085
+
+Astar Manhattan s:0 size:10 spot:21
+found solution
+Time : 7424205
+Memory : 2033392.3698385628
+Visted : 314757
+deadends : 87663
+
+Astar Euclidean s:0 size:10 spot:20
+found solution
+Time : 9446466
+Memory : 2484668.8360281973
+Visted : 384613
+deadends : 107075
+
+Astar Euclidean s:0 size:10 spot:21
+found solution
+Time : 8673031
+Memory : 2256931.071732157
+Visted : 349360
+deadends : 97272
+
+Dijkstra s:0 size:10 spot:20
+found solution
+Time : 9505127
+Memory : 1287310.89719668
+Visted : 397299
+deadends : 110632
+
+Dijkstra s:0 size:10 spot:21
+found solution
+Time : 9467533
+Memory : 1265375.555597348
+Visted : 390529
+deadends : 108727
+
+Floodfill s:0 size:10 spot:20
+found path
+Time : 9779276
+Memory : 709561.6784959296
+Visted : 397385
+deadends : 110658
+
+Floodfill s:0 size:10 spot:21
+found path
+Time : 9632937
+Memory : 680788.2208878763
+Visted : 390584
+deadends : 108742
+
+iterative Brute Force  s:0 size:10 spot:20
+Time : 533552
+Memory : 140.37832799999256
+Visted : 18210
+deadends : 4670
+
+iterative Brute Force  s:0 size:10 spot:21
+Time : 12221302
+Memory : 6911.896679969108
+Visted : 371277
+deadends : 103161
+
+Iterative random walk s:0 size:10 spot:20
+we got to 0,0
+Time : 10042770
+Memory : 3985.4798319807546
+Visted : 222321
+deadends : 61611
+
+Iterative random walk s:0 size:10 spot:21
+we got to 1,390
+Time : 12033204
+Memory : 7037.616216069893
+Visted : 264419
+deadends : 73184

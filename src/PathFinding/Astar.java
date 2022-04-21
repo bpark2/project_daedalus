@@ -72,6 +72,7 @@ public class Astar extends pathFindingAlgorithm{
         for (int i = 0; i < dist.length; i++) {//fills the distances with max value
             for (int j = 0; j < dist[i].length; j++) {
                 dist[i][j] = Integer.MAX_VALUE;
+                fscore[i][j] = Double.POSITIVE_INFINITY;
             }
         }
         dist[x][y] = 0;//the starting position is always 0 distance from it self.

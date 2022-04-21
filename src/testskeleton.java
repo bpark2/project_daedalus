@@ -1,6 +1,7 @@
 import Components.cell;
 import Components.grid;
 import GUI.myFrame;
+import MazeMaking.SideWinder;
 import MazeMaking.mazeMakingAlgorithm;
 import MazeMaking.pseudoBacktracking;
 import PathFinding.*;
@@ -14,9 +15,9 @@ public class testskeleton {
 
     public static void main(String[] args) {
         Runtime runtime = Runtime.getRuntime();
-        grid main = new grid(10, 10);
+        grid main = new grid(8000, 8000);
         myFrame f = new myFrame("Algorithm", main);
-        mazeMakingAlgorithm m = new pseudoBacktracking();
+        mazeMakingAlgorithm m = new SideWinder();
         int deadEnds = 0;
         m.setDisplay(f);
         m.setR(420);
@@ -27,8 +28,8 @@ public class testskeleton {
             }
         }
         long startTime = System.nanoTime();
-        pathFindingAlgorithm finder = new recursiveBruteforce();//the algorithm we are using
-        finder.setHeuristic(false);
+        pathFindingAlgorithm finder = new Astar();//the algorithm we are using
+        finder.setHeuristic(true);
 //        pathFindingAlgorithm finder = new dijkstra();
 
         finder.setDisplay(f);
@@ -36,7 +37,7 @@ public class testskeleton {
         int goalY = (int) (m.getR().nextDouble() * main.getLaby()[0].length);
         System.out.println("Goal Coordinates (X,Y): " + goalX + "," + goalY);
         f.repaint();
-        finder.findPath(main, 0, 0, 2, 2);//x = 0 to width, y = 0 to height
+        finder.findPath(main, 0, 0, goalX, goalY);//x = 0 to width, y = 0 to height
 //        System.out.println(String.format("Memory : " + (double)test.getNonHeapMemoryUsage().getUsed()));
         System.out.println("Memory " + finder.getTotalMemory());
         ArrayList<cell> t = finder.getSolution();
