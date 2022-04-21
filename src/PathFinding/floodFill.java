@@ -54,7 +54,6 @@ public class floodFill extends pathFindingAlgorithm{
             temp.setVisited(true);
             temp.setPath(true);
             if(temp.getX()==destX && temp.getY()==destY) {
-                System.out.println("found path");
                 break;
             }
             if(temp.getCellNorth()!=null && !temp.getCellNorth().isVisited())

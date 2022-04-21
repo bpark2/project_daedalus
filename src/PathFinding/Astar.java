@@ -86,7 +86,6 @@ public class Astar extends pathFindingAlgorithm{
             if(currCell==null)//if no more cells to visit
                 break;
             if((currCell.getX()==destX && currCell.getY()==destY)){
-                System.out.println("found solution");
                 reconstructPath(prev,currCell);
                 break;
             }

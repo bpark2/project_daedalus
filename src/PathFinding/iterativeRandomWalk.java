@@ -49,7 +49,6 @@ public class iterativeRandomWalk extends pathFindingAlgorithm{
             }
             addMemory();
         }
-        System.out.println("we got to "+curCell.getX()+","+curCell.getY());
     }
 
     public ArrayList<cell> getNeighbours(cell curCell, ArrayList<cell> neighbours){

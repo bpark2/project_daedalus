@@ -54,7 +54,6 @@ public class dijkstra extends pathFindingAlgorithm{
                 break;
             u.setVisited(true);
             if((u.getX()==destX && u.getY()==destY)){// if we found the solution
-                System.out.println("found solution");
                 break;
             }
             //for each neighbour
