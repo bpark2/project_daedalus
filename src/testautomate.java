@@ -34,11 +34,11 @@ public class testautomate {
     public static void main(String[] args) throws FileNotFoundException {
         int[] seeds = {420,772};//different seeds we ar eusing
         int[][] lengths = {
-                {1,10000},
+                {1,500},
                 {30,30},
-                {100,100},
-                {300,400},
-                {500,500}
+                {50,50},
+                {70,100},
+                {100,100}
         };//different sizes of mazes we are using
         int[][] starts = {
                 {0,0},
@@ -48,19 +48,17 @@ public class testautomate {
                 {0,0}
         };//starting postions for mazes, 2 per box
         int[][] goals = {
-                {0,9999},
+                {0,499},
                 {0,29},
+                {0,49},
                 {0,99},
-                {0,399},
-                {0,499}
+                {0,99}
         };//there are 2 goals per box, and the format is [x,y]
         for(int i = 0; i<seeds.length;i++){//for each seed
             PrintStream o;
             o = new PrintStream(new File("seed"+i+".txt"));
             System.setOut(o);//setting it so we are going save the data
-            System.out.println("Seed : " + i);
             for (int j = 0; j < 2; j++) {//for each maze making algorithm
-                System.out.println("Maze algo: " + j);
                 for (int k = 0; k < lengths.length; k++) {//number of sizes
                     mazeMakingAlgorithm m = null;
                     grid main = new grid(lengths[k][0],lengths[k][1]);
@@ -74,13 +72,10 @@ public class testautomate {
                     }
 
                     m.setR(seeds[i]);
-                    long startTime = System.currentTimeMillis();
                     m.makePath(main);//make the path
-                    System.out.println("Maze Time : " + (System.currentTimeMillis() - startTime));
-
 
                     for (int l = 0; l < 6; l++) {//number of path finding algorithm
-                        for (int n = 0; n < goals.length; n++) {//for number of goals and starts to consider, here k * 2 is 2 goals per mazesize
+                        for (int n = k; n <= k; n++) {//for number of goals and starts to consider, here k * 2 is 2 goals per mazesize
                             main.reset();//resets variables
                             Runtime.getRuntime().gc();
 //
@@ -88,42 +83,42 @@ public class testautomate {
                                 case 0://Astar with manhattan
 //                                    o = new PrintStream(new File(files[l]));
 //                                    System.setOut(o);
-                                    System.out.println("Astar Manhattan size:"+k+" spot:"+n);
+                                    System.out.println("Astar Manhattan , s : "+i+" , malgo : "+j+" , size : "+k);
                                     runTest(new Astar(), true, starts[n][0], starts[n][1], goals[n][0], goals[n][1], main);
 //                                    System.setOut(System.out);
                                     break;
                                 case 1://astar with euclidean
 //                                    o = new PrintStream(new File(files[l]));
 //                                    System.setOut(o);
-                                    System.out.println("Astar Euclidean size:"+k+" spot:"+n);
+                                    System.out.println("Astar Euclidean , s : "+i+" , malgo : "+j+" , size : "+k);
                                     runTest(new Astar(), false, starts[n][0], starts[n][1], goals[n][0], goals[n][1], main);
 //                                    System.setOut(System.out);
                                     break;
                                 case 2://dijkstra
 //                                    o = new PrintStream(new File(files[l]));
 //                                    System.setOut(o);
-                                    System.out.println("Dijkstra size:"+k+" spot:"+n);
+                                    System.out.println("Dijkstra , s : "+i+" , malgo : "+j+" , size : "+k);
                                     runTest(new dijkstra(), true, starts[n][0], starts[n][1], goals[n][0], goals[n][1], main);
 //                                    System.setOut(System.out);
                                     break;
                                 case 3://floodfill
 //                                    o = new PrintStream(new File(files[l]));
 //                                    System.setOut(o);
-                                    System.out.println("Floodfill size:"+k+" spot:"+n);
+                                    System.out.println("Floodfill , s : "+i+" , malgo : "+j+" , size : "+k);
                                     runTest(new floodFill(), true, starts[n][0], starts[n][1], goals[n][0], goals[n][1], main);
 //                                    System.setOut(System.out);
                                     break;
                                 case 4://iterative brute force
 //                                    o = new PrintStream(new File(files[l]));
 //                                    System.setOut(o);
-                                    System.out.println("iterative Brute Force size:"+k+" spot:"+n);
+                                    System.out.println("iterative Brute Force , s : "+i+" , malgo : "+j+" , size : "+k);
                                     runTest(new iterativeBruteForce(), true, starts[n][0], starts[n][1], goals[n][0], goals[n][1], main);
 //                                    System.setOut(System.out);
                                     break;
                                 case 5://iterative randomwalk
 //                                    o = new PrintStream(new File(files[l]));
 //                                    System.setOut(o);
-                                    System.out.println("Iterative random walk size:"+k+" spot:"+n);
+                                    System.out.println("Iterative random walk , s : "+i+" , malgo : "+j+" , size : "+k);
                                     runTest(new iterativeRandomWalk(), true, starts[n][0], starts[n][1], goals[n][0], goals[n][1], main);
 //                                    System.setOut(System.out);
                                     break;

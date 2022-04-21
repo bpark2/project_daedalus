@@ -5,6 +5,7 @@ import Components.grid;
 
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 
 public class pseudoBacktracking extends mazeMakingAlgorithm {
 
@@ -20,6 +21,12 @@ public class pseudoBacktracking extends mazeMakingAlgorithm {
             int x = s.peek().getX();
             int y = s.peek().getY();
             ArrayList<cell> possibleNeighbours = new ArrayList<>();
+            try {
+                display.repaint();
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println("no oh");
+            }
             if((y+1)<laby.getLaby()[0].length && !laby.get(x,y+1).isVisited()){//if north is not visited
                 possibleNeighbours.add(laby.get(x,y+1));
             }

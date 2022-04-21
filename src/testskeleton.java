@@ -16,7 +16,7 @@ public class testskeleton {
     public static void main(String[] args) {
         Runtime runtime = Runtime.getRuntime();
         grid main = new grid(8000, 8000);
-        myFrame f = new myFrame("Algorithm", main);
+        myFrame f = new myFrame("Algorithm");
         mazeMakingAlgorithm m = new SideWinder();
         int deadEnds = 0;
         m.setDisplay(f);

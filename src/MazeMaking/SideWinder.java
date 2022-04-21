@@ -8,7 +8,10 @@ import java.util.concurrent.TimeUnit;
 //import java.util.LinkedList;
 
 public class SideWinder extends mazeMakingAlgorithm{
-
+    /**
+     * this algorithms implements the Side Winder algorithm and more about how it works can be read here -> https://weblog.jamisbuck.org/2011/2/3/maze-generation-sidewinder-algorithm
+     * @param laby this is the grid we are trying to solve
+     */
     public void makePath(grid laby){
         ArrayList<cell> run = new ArrayList<>();
         for (int i = 0; i < laby.getLaby().length; i++) {
@@ -27,6 +30,12 @@ public class SideWinder extends mazeMakingAlgorithm{
                 }
                 else if(j+1<laby.getLaby()[i].length){//keep moving east
                     laby.setConnection(laby.get(i,j),laby.get(i,j+1));
+                }
+                try {
+                    display.repaint();
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException e) {
+                    System.out.println("no oh");
                 }
             }
         }//end of for loop

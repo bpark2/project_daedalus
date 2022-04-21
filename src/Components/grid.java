@@ -20,7 +20,7 @@ public class grid {
     public cell get(int i,int j){
         return laby[i][j];
     }
-    /*
+    /**
        initializes a labyrinth filled with cells that are unconnected
         */
     public void init(){
@@ -118,6 +118,10 @@ public class grid {
         }
         return deadEnds;
     }
+
+    /**
+     * resets the entire the visited and ispath variables in the grid for every cell.
+     */
     public void reset(){
         for (int i = 0; i < laby.length; i++) {
             for (int j = 0; j < laby[i].length; j++) {
