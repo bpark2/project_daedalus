@@ -25,6 +25,7 @@ public abstract class pathFindingAlgorithm {
     }
     /**
      * this function initializes total memory and runtime so that we can keep track of memory used
+     * @see ManagementFactory
      */
     public void initializeMemory(){
         memory = ManagementFactory.getMemoryMXBean();
@@ -32,6 +33,10 @@ public abstract class pathFindingAlgorithm {
         startMemory = ( memory.getHeapMemoryUsage().getUsed())/1000000.0;
         totalMemory = startMemory;
     }
+
+    /**
+     * this uses heap memory manager to count how much memory is used and adds them in mega bytes
+     */
     public void addMemory(){
 //        totalMemory = totalMemory + ((runtime.totalMemory()-runtime.freeMemory())-startMemory);
         Runtime.getRuntime().gc();

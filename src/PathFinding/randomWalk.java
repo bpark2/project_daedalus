@@ -4,6 +4,7 @@ import Components.cell;
 import Components.grid;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class randomWalk extends pathFindingAlgorithm{
     int destX;//the goal x coordinate
@@ -29,6 +30,12 @@ public class randomWalk extends pathFindingAlgorithm{
         int curY = curCell.getY();
         ArrayList<cell> neighbours = new ArrayList<>();
         if(curX!=destX || curY!=destY){//if our cell is not at the goal position
+            try {
+                display.repaint();
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println("no oh");
+            }
             /*
             if north is not out of bounds and is not visited:
                 add to list of possible neighbours

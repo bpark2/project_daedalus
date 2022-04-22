@@ -5,8 +5,16 @@ import Components.grid;
 
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 
 public class iterativeBruteForce extends pathFindingAlgorithm{
+    /**
+     * this functions takes a given integer stack S which contains the directions we used to get to the solution.
+     * @param laby the grid we are trying to solve
+     * @param S the stack containing the directions we have
+     * @param x the solution x
+     * @param y the solution y
+     */
     void reconstructPath(grid laby, Stack<Integer> S,int x, int y){
         solution = new ArrayList<>();
 //        Stack<Integer> temp = new Stack<>();
@@ -43,6 +51,12 @@ public class iterativeBruteForce extends pathFindingAlgorithm{
 //        int pathTaken = -1;//0 for north taken, 1 for east taken, 2 for south taken, and 3 for west taken
         while(true) {
             currCell.setVisited(true);
+            try {
+                display.repaint();
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println("no oh");
+            }
             if (currCell.getX() == destX && currCell.getY() == destY)//if we reach destination break
                 break;
             if (currCell.getCellWest() != null && !currCell.getCellWest().isVisited()) {//there exist west

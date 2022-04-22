@@ -4,6 +4,7 @@ import Components.grid;
 import Components.cell;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class dijkstra extends pathFindingAlgorithm{
 
@@ -53,6 +54,12 @@ public class dijkstra extends pathFindingAlgorithm{
             if(u==null)//if there is no more nodes to look for
                 break;
             u.setVisited(true);
+            try {
+                display.repaint();
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println("no oh");
+            }
             if((u.getX()==destX && u.getY()==destY)){// if we found the solution
                 break;
             }

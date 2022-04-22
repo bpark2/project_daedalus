@@ -4,12 +4,19 @@ import Components.cell;
 import Components.grid;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class recursiveBruteforce extends pathFindingAlgorithm{
     int destX;
     int destY;
     boolean isPartOfSolution(cell path, int dir){
         addMemory();
+        try {
+            display.repaint();
+            TimeUnit.MILLISECONDS.sleep(100);
+        } catch (InterruptedException e) {
+            System.out.println("no oh");
+        }
         if(path == null)
             return false;
         if(path.getX()==destX&&path.getY()==destY){

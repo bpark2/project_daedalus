@@ -1,0 +1,360 @@
+Astar Manhattan , s : 0 , malgo : 0 , size : 0
+Time : 1170
+Memory : 50.82316000000007
+Visted : 498
+deadends : 0
+
+Astar Euclidean , s : 0 , malgo : 0 , size : 0
+Time : 1400
+Memory : 63.512224000000145
+Visted : 498
+deadends : 0
+
+Dijkstra , s : 0 , malgo : 0 , size : 0
+Time : 1421
+Memory : 3.828464000000025
+Visted : 498
+deadends : 0
+
+Floodfill , s : 0 , malgo : 0 , size : 0
+Time : 1531
+Memory : 2.764983999999944
+Visted : 498
+deadends : 0
+
+iterative Brute Force , s : 0 , malgo : 0 , size : 0
+Time : 4
+Memory : 1.46716
+Visted : 498
+deadends : 0
+
+Iterative random walk , s : 0 , malgo : 0 , size : 0
+Time : 1422
+Memory : 2.543631999999996
+Visted : 498
+deadends : 0
+
+Astar Manhattan , s : 0 , malgo : 0 , size : 1
+Time : 2366
+Memory : 14.82976800000001
+Visted : 812
+deadends : 216
+
+Astar Euclidean , s : 0 , malgo : 0 , size : 1
+Time : 2458
+Memory : 15.583584000000007
+Visted : 858
+deadends : 233
+
+Dijkstra , s : 0 , malgo : 0 , size : 1
+Time : 2569
+Memory : 9.10516799999977
+Visted : 895
+deadends : 249
+
+Floodfill , s : 0 , malgo : 0 , size : 1
+Time : 2562
+Memory : 4.686183999999926
+Visted : 895
+deadends : 249
+
+iterative Brute Force , s : 0 , malgo : 0 , size : 1
+Time : 1863
+Memory : 1.8982640000000603
+Visted : 761
+deadends : 206
+
+Iterative random walk , s : 0 , malgo : 0 , size : 1
+Time : 3320
+Memory : 2.207224000000135
+Visted : 635
+deadends : 166
+
+Astar Manhattan , s : 0 , malgo : 0 , size : 2
+Time : 7349
+Memory : 101.98077600000562
+Visted : 2323
+deadends : 632
+
+Astar Euclidean , s : 0 , malgo : 0 , size : 2
+Time : 7157
+Memory : 104.399416000006
+Visted : 2379
+deadends : 650
+
+Dijkstra , s : 0 , malgo : 0 , size : 2
+Time : 7504
+Memory : 56.79082400000237
+Visted : 2498
+deadends : 690
+
+Floodfill , s : 0 , malgo : 0 , size : 2
+Time : 7488
+Memory : 19.88911200000031
+Visted : 2497
+deadends : 689
+
+iterative Brute Force , s : 0 , malgo : 0 , size : 2
+Time : 5845
+Memory : 3.739768000000088
+Visted : 2150
+deadends : 583
+
+Iterative random walk , s : 0 , malgo : 0 , size : 2
+Time : 2341
+Memory : 2.1118560000000226
+Visted : 488
+deadends : 98
+
+Astar Manhattan , s : 0 , malgo : 0 , size : 3
+Time : 18516
+Memory : 637.2609919999654
+Visted : 5458
+deadends : 1476
+
+Astar Euclidean , s : 0 , malgo : 0 , size : 3
+Time : 21310
+Memory : 731.4221839999547
+Visted : 6267
+deadends : 1706
+
+Dijkstra , s : 0 , malgo : 0 , size : 3
+Time : 24386
+Memory : 412.17914399994424
+Visted : 6967
+deadends : 1906
+
+Floodfill , s : 0 , malgo : 0 , size : 3
+Time : 23664
+Memory : 154.99803199999917
+Visted : 6967
+deadends : 1906
+
+iterative Brute Force , s : 0 , malgo : 0 , size : 3
+Time : 22040
+Memory : 13.497168000002643
+Visted : 6829
+deadends : 1859
+
+Iterative random walk , s : 0 , malgo : 0 , size : 3
+Time : 16999
+Memory : 9.259488000000456
+Visted : 2673
+deadends : 691
+
+Astar Manhattan , s : 0 , malgo : 0 , size : 4
+Time : 32218
+Memory : 1447.5259520000577
+Visted : 8701
+deadends : 2380
+
+Astar Euclidean , s : 0 , malgo : 0 , size : 4
+Time : 35288
+Memory : 1563.123839999844
+Visted : 9397
+deadends : 2570
+
+Dijkstra , s : 0 , malgo : 0 , size : 4
+Time : 37326
+Memory : 840.209367999804
+Visted : 9967
+deadends : 2736
+
+Floodfill , s : 0 , malgo : 0 , size : 4
+Time : 37344
+Memory : 281.18148000000537
+Visted : 9967
+deadends : 2736
+
+iterative Brute Force , s : 0 , malgo : 0 , size : 4
+Time : 33326
+Memory : 24.28895200000546
+Visted : 9444
+deadends : 2573
+
+Iterative random walk , s : 0 , malgo : 0 , size : 4
+Time : 21831
+Memory : 11.882167999999929
+Visted : 3161
+deadends : 811
+
+Astar Manhattan , s : 0 , malgo : 1 , size : 0
+Time : 1455
+Memory : 5.554023999999892
+Visted : 498
+deadends : 0
+
+Astar Euclidean , s : 0 , malgo : 1 , size : 0
+Time : 1457
+Memory : 5.554023999999892
+Visted : 498
+deadends : 0
+
+Dijkstra , s : 0 , malgo : 1 , size : 0
+Time : 1471
+Memory : 3.608512000000023
+Visted : 498
+deadends : 0
+
+Floodfill , s : 0 , malgo : 1 , size : 0
+Time : 1459
+Memory : 2.2776400000000168
+Visted : 498
+deadends : 0
+
+iterative Brute Force , s : 0 , malgo : 1 , size : 0
+Time : 3
+Memory : 1.470296
+Visted : 498
+deadends : 0
+
+Iterative random walk , s : 0 , malgo : 1 , size : 0
+Time : 1463
+Memory : 2.206944000000033
+Visted : 498
+deadends : 0
+
+Astar Manhattan , s : 0 , malgo : 1 , size : 1
+Time : 482
+Memory : 4.128352000000017
+Visted : 160
+deadends : 14
+
+Astar Euclidean , s : 0 , malgo : 1 , size : 1
+Time : 497
+Memory : 4.20983200000002
+Visted : 165
+deadends : 15
+
+Dijkstra , s : 0 , malgo : 1 , size : 1
+Time : 597
+Memory : 3.1801840000000086
+Visted : 196
+deadends : 17
+
+Floodfill , s : 0 , malgo : 1 , size : 1
+Time : 583
+Memory : 1.6410480000000103
+Visted : 195
+deadends : 17
+
+iterative Brute Force , s : 0 , malgo : 1 , size : 1
+Time : 81
+Memory : 1.5022720000000012
+Visted : 108
+deadends : 7
+
+Iterative random walk , s : 0 , malgo : 1 , size : 1
+Time : 472
+Memory : 1.5494160000000068
+Visted : 119
+deadends : 11
+
+Astar Manhattan , s : 0 , malgo : 1 , size : 2
+Time : 6824
+Memory : 96.28420800000255
+Visted : 2196
+deadends : 198
+
+Astar Euclidean , s : 0 , malgo : 1 , size : 2
+Time : 7144
+Memory : 100.5507120000031
+Visted : 2295
+deadends : 213
+
+Dijkstra , s : 0 , malgo : 1 , size : 2
+Time : 7484
+Memory : 54.4739440000021
+Visted : 2393
+deadends : 236
+
+Floodfill , s : 0 , malgo : 1 , size : 2
+Time : 7406
+Memory : 17.891360000000134
+Visted : 2393
+deadends : 236
+
+iterative Brute Force , s : 0 , malgo : 1 , size : 2
+Time : 730
+Memory : 2.009192000000011
+Visted : 1040
+deadends : 65
+
+Iterative random walk , s : 0 , malgo : 1 , size : 2
+Time : 4089
+Memory : 4.282984000000191
+Visted : 1064
+deadends : 62
+
+Astar Manhattan , s : 0 , malgo : 1 , size : 3
+Time : 6384
+Memory : 214.8118720000065
+Visted : 1830
+deadends : 176
+
+Astar Euclidean , s : 0 , malgo : 1 , size : 3
+Time : 6491
+Memory : 218.9985280000067
+Visted : 1866
+deadends : 178
+
+Dijkstra , s : 0 , malgo : 1 , size : 3
+Time : 7010
+Memory : 120.43026400000271
+Visted : 2012
+deadends : 184
+
+Floodfill , s : 0 , malgo : 1 , size : 3
+Time : 6952
+Memory : 14.063591999999726
+Visted : 2011
+deadends : 184
+
+iterative Brute Force , s : 0 , malgo : 1 , size : 3
+Time : 1100
+Memory : 2.4550479999999935
+Visted : 947
+deadends : 66
+
+Iterative random walk , s : 0 , malgo : 1 , size : 3
+Time : 26478
+Memory : 63.12415199999758
+Visted : 4150
+deadends : 401
+
+Astar Manhattan , s : 0 , malgo : 1 , size : 4
+Time : 28630
+Memory : 1270.1992559999867
+Visted : 7634
+deadends : 728
+
+Astar Euclidean , s : 0 , malgo : 1 , size : 4
+Time : 29046
+Memory : 1292.1239279999768
+Visted : 7766
+deadends : 741
+
+Dijkstra , s : 0 , malgo : 1 , size : 4
+Time : 30266
+Memory : 676.5061039998591
+Visted : 8020
+deadends : 773
+
+Floodfill , s : 0 , malgo : 1 , size : 4
+Time : 29846
+Memory : 192.74293599999814
+Visted : 8020
+deadends : 773
+
+iterative Brute Force , s : 0 , malgo : 1 , size : 4
+Time : 8000
+Memory : 16.601848000000125
+Visted : 3879
+deadends : 327
+
+Iterative random walk , s : 0 , malgo : 1 , size : 4
+Time : 52755
+Memory : 109.48597599999258
+Visted : 7997
+deadends : 689
+

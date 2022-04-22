@@ -11,6 +11,9 @@ import java.lang.management.MemoryMXBean;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * this code is only for testing purpose and should not be used in actual user interface.
+ */
 public class testskeleton {
 
     public static void main(String[] args) {

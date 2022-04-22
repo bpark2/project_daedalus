@@ -7,6 +7,7 @@ import Components.grid;
 public class myFrame extends JFrame {
     int dim;
     labDisp labyrinth;//displays the labyrinth
+    boolean mazemaking;//indicates if we are making a maze or not
     private volatile boolean exit = false;//for later when force end
 
     /**
@@ -14,6 +15,7 @@ public class myFrame extends JFrame {
      * @param title this is the title of the gui
      */
     public myFrame(String title){
+        mazemaking = false;
         setPreferredSize(new Dimension(500,500));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -24,6 +26,14 @@ public class myFrame extends JFrame {
         pack();
         setVisible(true);
     }
+    public void setMazemaking(boolean flag){
+        mazemaking = flag;
+    }
+
+    /**
+     * this functions sets the grid we are using with the display
+     * @param g the grid we are using for the display
+     */
     public void setLabyrinth(grid g){
         labyrinth.setGriddy(g);
     }
@@ -41,6 +51,10 @@ class labDisp extends JPanel{
         griddy = g;
     }
 
+    /**
+     * this function repaints the grid each time a change is made, and redraws the maze and the paths and the solution that is found
+     * @param g
+     */
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 
@@ -77,9 +91,14 @@ class labDisp extends JPanel{
                     if (curCell.getCellWest() == null) {
                         g.drawLine(x - diagSize, y + diagSize, x - diagSize, y - diagSize);
                     }
-                    if (curCell.isPath()) {
+                    if (curCell.isVisited() && !F.mazemaking) {
                         g.setColor(Color.DARK_GRAY);
-                        g.fillRect(x - diagSize, y - diagSize, diagSize, diagSize);
+                        g.fillRect(x - diagSize + 2, y - diagSize+2, diagSize, diagSize);
+                        g.setColor(Color.BLACK);
+                    }
+                    if(curCell.isPath()){
+                        g.setColor(Color.GREEN);
+                        g.fillRect(x-diagSize +2,y-diagSize +2 ,diagSize,diagSize);
                         g.setColor(Color.BLACK);
                     }
                 }

@@ -15,35 +15,47 @@ public class User {
         myFrame f = new myFrame("Algorithms");
         Scanner s = new Scanner(System.in);
         System.out.println("welcome user to our project!");
+        grid main =null;
         while(true) {
-            System.out.println("Enter your width and height , or input 0 to end!");
+            System.out.println("Enter your width and height as number number, or input 0 to end! or 1 to use the same maze previously made, instead of any one of the numbers");
             int width = s.nextInt();
             int height = s.nextInt();
             if(width<=0||height<=0)
                 break;
-            grid main = new grid(height, width);//this is the main grid we are going to be using
-            f.setLabyrinth(main);
-            System.out.println("Enter which algorithm you want to use for maze making \n0. Sidewinder \n1. Iterative bactracker");
             boolean flag = false;//indicating if user input bad input
-            mazeMakingAlgorithm m = null;
-            switch (s.nextInt()){
-                case 0: m = new SideWinder();
-                    System.out.println("Input your random seed");
-                    m.setDisplay(f);
-                    m.setR(s.nextInt());
-                    m.makePath(main);
+            if(width>1 && height>1) {
+                main = new grid(height, width);//this is the main grid we are going to be using
+                f.setLabyrinth(main);
+                System.out.println("Enter which algorithm you want to use for maze making \n0. Sidewinder \n1. Iterative bactracker");
+
+                mazeMakingAlgorithm m = null;
+                switch (s.nextInt()) {
+                    case 0:
+                        m = new SideWinder();
+                        System.out.println("Input your random seed");
+                        m.setDisplay(f);
+                        m.setR(s.nextInt());
+                        f.setMazemaking(true);
+                        m.makePath(main);
+                        f.setMazemaking(false);
+                        break;
+                    case 1:
+                        m = new pseudoBacktracking();
+                        m.setDisplay(f);
+                        System.out.println("Input your random seed");
+                        m.setR(s.nextInt());
+                        f.setMazemaking(true);
+                        m.makePath(main);
+                        f.setMazemaking(false);
+                        break;
+                    default:
+                        flag = true;
+                }
+                if (flag)
                     break;
-                case 1: m = new pseudoBacktracking();
-                    m.setDisplay(f);
-                    System.out.println("Input your random seed");
-                    m.setR(s.nextInt());
-                    m.makePath(main);
-                    break;
-                default : flag = true;
             }
-            if(flag)
-                continue;
             f.repaint();
+
             main.reset();
             System.out.println("Enter your intial X and Y positions");
             int X = s.nextInt();
@@ -78,7 +90,7 @@ public class User {
                 default : flag = true;
             }
             if(flag)
-                continue;
+                break;
             finder.setDisplay(f);
             Runtime.getRuntime().gc();
             long starttime = System.currentTimeMillis();
@@ -91,7 +103,7 @@ public class User {
             } catch (InterruptedException e) {
                 System.out.println("oh no");
             }
-            main.reset();
+//            main.reset();
             for (int i = 0; i < t.size(); i++) {//this is the loop
                 t.get(i).setPath(true);
                 f.repaint();
@@ -101,11 +113,11 @@ public class User {
                     System.out.println("no oh");
                 }
             }//end of path
-            System.out.println("Time : " + (time));
-            System.out.println("Memory : " + finder.getTotalMemory());
-            System.out.println("Visted : "+ main.countVisted(X,Y,destX,destY));
-            System.out.println("deadends : "+ main.countDeadEnds(X,Y,destX,destY));
-            System.out.println();
+//            System.out.println("Time : " + (time));
+//            System.out.println("Memory : " + finder.getTotalMemory());
+//            System.out.println("Visted : "+ main.countVisted(X,Y,destX,destY));
+//            System.out.println("deadends : "+ main.countDeadEnds(X,Y,destX,destY));
+//            System.out.println();
         }
     }
     public static void main(String[] args){

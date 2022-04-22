@@ -3,6 +3,7 @@ package PathFinding;
 import Components.cell;
 import Components.grid;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Astar extends pathFindingAlgorithm{
 
@@ -90,6 +91,12 @@ public class Astar extends pathFindingAlgorithm{
                 break;
             }
             currCell.setVisited(true);//we visit it
+            try {
+                display.repaint();
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println("no oh");
+            }
             ArrayList<cell> neighbours = new ArrayList<>();//holds the number of neighbours for current cell
             if(currCell.getCellNorth()!=null && !currCell.getCellNorth().isVisited()) neighbours.add(currCell.getCellNorth());//checks if we have a north neighbour
             if(currCell.getCellEast()!=null && !currCell.getCellEast().isVisited()) neighbours.add(currCell.getCellEast());//checks if we have a east neighbour

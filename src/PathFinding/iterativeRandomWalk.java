@@ -4,6 +4,7 @@ import Components.cell;
 import Components.grid;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class iterativeRandomWalk extends pathFindingAlgorithm{
     int destX;//the goal x coordinate
@@ -19,7 +20,7 @@ public class iterativeRandomWalk extends pathFindingAlgorithm{
         this.destX = destX;
         this.destY = destY;
         //updating path with current position
-        curCell.setPath(true);
+//        curCell.setPath(true);
         curCell.setVisited(true);
         solution.add(curCell);
         addMemory();
@@ -28,7 +29,7 @@ public class iterativeRandomWalk extends pathFindingAlgorithm{
             neighbours = getNeighbours(curCell,neighbours);
             if(neighbours.size()==0){
                 while(true){
-                    solution.get(solution.size() - 1).setPath(false);
+//                    solution.get(solution.size() - 1).setPath(false);
                     solution.remove(solution.size() - 1);
                     if(solution.size()>0) {
                         curCell = solution.get(solution.size() - 1);
@@ -43,7 +44,13 @@ public class iterativeRandomWalk extends pathFindingAlgorithm{
                 int decision = (int)(Math.random()*neighbours.size());
                 cell chosenOne = neighbours.get(decision);
                 chosenOne.setVisited(true);
-                chosenOne.setPath(true);
+                try {
+                    display.repaint();
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException e) {
+                    System.out.println("no oh");
+                }
+//                chosenOne.setPath(true);
                 solution.add(chosenOne);
                 curCell = chosenOne;
             }

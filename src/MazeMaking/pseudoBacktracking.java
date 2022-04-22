@@ -10,8 +10,12 @@ import java.util.concurrent.TimeUnit;
 public class pseudoBacktracking extends mazeMakingAlgorithm {
 
     @Override
+    /**
+     * this function makes the grid using the backtracking algorithm, however, this is iterative in nature. https://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking
+     *
+     */
     public void makePath(grid laby) {
-        Stack<cell> s = new Stack<cell>();
+        Stack<cell> s = new Stack<>();
         int randomX = (int)(r.nextDouble() * laby.getLaby().length);
         int randomY = (int)(r.nextDouble() * laby.getLaby()[0].length);
         cell start = laby.get(randomX,randomY);

@@ -6,13 +6,21 @@ import Components.cell;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 
 public class floodFill extends pathFindingAlgorithm{
+    /**
+     * this function reconstructs the given path when created using the cells.
+     * So the way it does it, is by popping the Stack S, where those are the visited nodes, and when ever there is a connection with the current node, that is added to the solution queue
+     * @param S The stack containing the cells visited
+     * @param currCell the current cell we are at, which is the solution.
+     */
     void pathReconstruct(Stack<cell> S, cell currCell){
         solution = new ArrayList<>();
+        cell temp = null;
         while (!S.isEmpty()){
 
-            cell temp = S.pop();
+            temp = S.pop();
             if(currCell.getCellNorth()!=null && temp.getCellSouth()!=null && (currCell.getX()-1 == temp.getX() && currCell.getY()==temp.getY())){//if temp is north of currCell
                 solution.add(0,currCell);
                 currCell = temp;
@@ -34,6 +42,7 @@ public class floodFill extends pathFindingAlgorithm{
                 continue;
             }
         }
+        solution.add(0,temp);
     }
     LinkedList<cell> list ;//this contains the list of cells to be visited.
     @Override
@@ -52,7 +61,13 @@ public class floodFill extends pathFindingAlgorithm{
             temp = list.remove();
             takencell.push(temp);
             temp.setVisited(true);
-            temp.setPath(true);
+//            temp.setPath(true);
+            try {
+                display.repaint();
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println("no oh");
+            }
             if(temp.getX()==destX && temp.getY()==destY) {
                 break;
             }
